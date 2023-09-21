@@ -1,0 +1,156 @@
+@import 'common.css';
+
+body {
+    font-family: Arial, sans-serif;
+  }
+
+#sec-messages{
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+}
+
+#sec-messages .message-error{
+    background-color: var(--mensaje-usuario-rojo);
+
+}
+
+#sec-messages .message-success{
+    background-color: var(--mensaje-usuario-verde);
+
+}
+
+#sec-messages .message-exclamation{
+    background-color: var(--mensaje-usuario-amarillo);
+
+}
+
+
+#sec-contenido #Elecciones-titulo{
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    color: var(--celeste);
+
+}
+
+.texto-path{
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    color: var(--celeste);
+}
+
+#sec-contenido #grid{
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th{
+    text-align: center;
+    color: var(--titulo-Grilla);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid --borde-inferior-Grilla;
+}
+
+tbody tr:hover {
+    background-color: rgb(250, 250, 250);
+}
+
+tbody td {
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid --borde-inferior-Grilla;
+    padding: 15px 0;
+    font-size: 12px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.map{
+    width: 100%; /* Ajusta el ancho del mapa al 100% */
+    border: 1px solid #ccc; /* Añade un borde alrededor del mapa */
+    border-radius: 10px; /* Añade esquinas redondeadas al mapa */
+}
+
+#sec-contenido #Mesas-escrutadas{
+    background-color: var(--celeste);
+    border-radius: 10px;
+    margin: 15px;
+    height: 70px;
+    width: 184px;
+    padding: 0.5rem 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #FFF;
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+}
+
+#sec-contenido #urna-mesas-escrutadas{
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Alto de la imagen */
+
+}
+
+#sec-contenido #Electores{
+    background-color: var(--magenta);
+    border-radius: 10px;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+}
+
+
+#sec-contenido #tipitos-electores{
+    width: 100%;
+    height: 100%;
+    fill: #FFF; /* Color de las personas en blanco */
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+
+}
+
+#sec-contenido #Participación-sobre-escrutado{
+    background-color: var(--morado);
+    border-radius: 10px;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+
+}
+
+#sec-contenido #manitos{
+    width: 100%;
+    height: 100%;
+    fill: #FFF; /* Color de las personas en blanco */
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+
+}

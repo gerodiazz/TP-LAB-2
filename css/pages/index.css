@@ -1,0 +1,47 @@
+@import 'common.css';
+
+#imagen-index {
+    margin: 15px;
+    width: 350px;
+}
+
+
+#sec-contenido .boton-paso {
+    background-color: var(--magenta);
+    border-radius: 10px;
+    margin: 25px;
+    height: 400px;
+    width: 100px;
+    padding: 1rem;
+    color: #FFF;
+    font-size: 28px;
+    background-image: url("http://www.w3.org/2000/svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+#sec-contenido .boton-paso:hover{
+    background-color: var(--gris-claro);
+}
+
+
+#sec-contenido .boton-general {
+    background-color: var(--celeste);
+    border-radius: 10px;
+    margin: 25px;
+    height: 400px;
+    width: 100px;
+    padding: 1rem;
+    color: #FFF;
+    font-size: 28px;
+    background-image: url("http://www.w3.org/2000/svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+#sec-contenido .boton-generales:hover {
+    background-color: var(--gris-claro);
+}
+
+

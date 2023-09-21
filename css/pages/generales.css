@@ -1,0 +1,413 @@
+@import 'common.css';
+
+#btn-filtrar {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--textos);
+    background-image: url('/img/icons/buscar.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px; 
+    background-position: center left;
+
+}
+
+header .menu{
+    margin-right: 13px;
+    margin-left: 13px;
+    padding-top: 20px;
+    background-color: var(--fondo-Menu);
+    width: 100%;
+}
+
+
+#filtro-año {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--textos);
+}
+
+#filtro-cargo {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--textos);
+
+}
+
+#filtro-distrito {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--textos);
+}
+
+#boton-inicio {
+    background-color: var(--gris-claro);
+    border-radius: 5px;
+    padding: 5px;
+    color: #FFF;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#boton-inicio:hover {
+    color: var(--textos);
+}
+
+
+#sec-messages{
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+}
+
+#sec-messages .message-error{
+    background-color: var(--mensaje-usuario-rojo);
+
+}
+
+#sec-messages .message-success{
+    background-color: var(--mensaje-usuario-verde);
+
+}
+
+#sec-messages .message-exclamation{
+    background-color: var(--mensaje-usuario-amarillo);
+
+}
+
+
+#sec-titulo{
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    color: var(--celeste);
+}
+
+.texto-path{
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    color: var(--celeste);
+}
+
+#boton-agregar-informe{
+    background-color: var(--gris-claro);
+    color: white;
+    font-size: 10px;   
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+
+}
+#boton-agregar-informe:hover{
+    color: var(--textos);
+}
+
+
+.sec-contenido #Mesas-escrutadas{
+    background-color: var(--celeste);
+    border-radius: 10px;
+    margin: 15px;
+    height: 70px;
+    width: 184px;
+    padding: 0.5rem 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #FFF;
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+}
+
+.sec-contenido #urna-mesas-escrutadas{
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Alto de la imagen */
+
+}
+
+.sec-contenido #Electores{
+    background-color: var(--magenta);
+    border-radius: 10px;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+}
+
+
+.sec-contenido #tipitos-electores{
+    width: 100%;
+    height: 100%;
+    fill: #FFF; /* Color de las personas en blanco */
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+
+}
+
+.sec-contenido #Participación-sobre-escrutado{
+    background-color: var(--morado);
+    border-radius: 10px;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+
+}
+
+.sec-contenido #manitos{
+    width: 100%;
+    height: 100%;
+    fill: #FFF; /* Color de las personas en blanco */
+    background-image: url("http://www.w3.org/2000/svg");
+    display: flex;
+    align-items: center;
+
+}
+
+
+.contenedor {
+    display: flex;
+}
+
+.item {
+    background-color: var(--color-fondo);
+    border-radius: 10px;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.icono-svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.texto {
+    color: white;
+    font-size: 12px;
+}
+
+.sec-contenido #cuadro-datos-agrupacion{
+    --chart-width: 260px;
+    --grid-color: #aaa;
+    --bar-thickness: 25px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
+    font-family: sans-serif;
+    width: var(--chart-width);
+    border-radius: 25px;
+    border: 1px var(--borde-Grilla) solid;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 1.8em 0 0 0;
+    white-space: nowrap;
+
+}
+
+.sec-contenido #cuadro-datos-agrupacion-titulo{
+    font-weight: bold;
+    font-size: 12px;
+    padding: 1.8em 0 0 0;
+    text-align: center;
+    white-space: nowrap;
+
+}
+
+.sec-contenido #mapa-provincia{
+    border-radius: 25px;
+    border: 1px var(--borde-Grilla) solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.sec-contenido #mapa-provincia-titulo{
+    font-weight: bold;
+    padding: 1.8em 0 0 0;
+    text-align: center;
+    white-space: nowrap;
+
+}
+
+.sec-contenido #Cuadro-grafica{
+    --chart-width: 260px;
+    --grid-color: #aaa;
+    --bar-thickness: 25px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
+    font-family: sans-serif;
+    width: var(--chart-width);
+    overflow-y: auto; /* Para habilitar el scroll vertical */
+    max-height: 325px; /* Altura máxima antes de que aparezca el scroll vertical */
+
+}
+
+/*aletar */
+.sec-contenido #Cuadro-grafica-titulo{
+    font-weight: bold;
+    padding: 1.8em 0 0 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.sec-contenido .agrupacion-datos{
+    overflow-y: scroll;
+    max-height: 325px;
+    font-size: 11px;
+    color: var(--textos);
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold; /* Grosor Agrupación: Bold (Datos normal) */
+    border-bottom: 1px solid var(--borde-Grilla); /* Línea borde inferior */
+
+}
+
+.sec-contenido .progress{
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.sec-contenido .progress-bar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    background: var(--graficaamarillo);
+}
+
+.sec-contenido .progress-bar{
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+
+
+.sec-contenido #Cuadro-grafica{
+    --chart-width: 260px;
+    --grid-color: #aaa;
+    --bar-thickness: 25px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
+    font-family: sans-serif;
+    width: var(--chart-width);
+}
+
+.sec-contenido #Cuadro-grafica-titulo{
+    font-weight: bold;
+    padding: 1.8em 0 2.8em;
+    text-align: center;
+    white-space: nowrap;
+
+}
+
+.sec-contenido .chart-wrap{
+    --chart-width: 260px;
+    --grid-color: #aaa;
+    --bar-thickness: 25px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
+    font-family: sans-serif;
+    width: var(--chart-width);
+}
+
+/* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+.sec-contenido .chart-wrap.horizontal .grid {
+    transform: rotate(-90deg);
+}
+.sec-contenido .chart-wrap.horizontal .bar::after {
+    /* giramos las letras para horizontal*/
+    transform: rotate(45deg);
+    padding-top: 0px;
+    display: block;
+}
+.sec-contenido .chart-wrap .grid {
+    margin-left: 50px;
+    position: relative;
+    padding: 5px 0 5px 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid var(--grid-color);
+    font-size: 10px;
+}
+    /* posicionamos el % del gráfico*/
+.sec-contenido .chart-wrap .grid::before {
+    font-size: 0.8em;
+
+    font-weight: bold;
+    content: '0%';
+    position: absolute;
+    left: -0.5em;
+    top: -1.5em;
+}
+.sec-contenido .chart-wrap .grid::after {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '100%';
+    position: absolute;
+    right: -1.5em;
+    top: -1.5em;
+}
+    /* giramos las valores de 0% y 100% para horizontal */
+.sec-contenido .chart-wrap.horizontal .grid::before,
+.sec-contenido .chart-wrap.horizontal .grid::after {
+    transform: rotate(90deg);
+}
+.sec-contenido .chart-wrap .bar {
+    width: var(--bar-value);
+    height: var(--bar-thickness);
+    margin: var(--bar-spacing) 0;
+    background-color: var(--bar-color);
+    border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
+}
+.sec-contenido .chart-wrap .bar:hover {
+    opacity: 0.7;
+}
+.sec-contenido .chart-wrap .bar::after {
+    content: attr(data-name);
+    margin-left: 100%;
+    padding: 10px;
+    display: inline-block;
+
+}
