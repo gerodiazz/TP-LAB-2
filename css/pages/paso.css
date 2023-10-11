@@ -1,281 +1,216 @@
-@import 'common.css';
-
-#btn-filtrar {
-    background-color: white;
-    border-radius: 15px;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
-    background-image: url('/img/icons/buscar.png');
-    background-repeat: no-repeat;
-    background-size: 20px 20px; 
-    background-position: center left;
-
-}
-
-header .menu{
-    margin-right: 13px;
-    margin-left: 13px;
-    padding-top: 20px;
-    background-color: var(--fondo-Menu);
+.header-page {
     width: 100%;
+    color: var(--celeste);
+    background-color: var(--fondo-Cabecera);
+    padding: 0.5rem;
+    margin: 0 auto;
+    
+}
+
+#menu-negro {
+    background-color: var(--fondo-Menu);
+    padding: 20px;
+}
+
+#menu-negro ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+#menu-negro li {
+    margin-right: 20px;
 }
 
 
-#filtro-año {
-    background-color: white;
-    border-radius: 15px;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
+#menu-negro a {
+    text-decoration: none;
     text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
+    font-size: 10px;
+    color: #FFF;
 }
 
-#filtro-cargo {
-    background-color: white;
-    border-radius: 15px;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
 
+#menu-negro a:active {
+    font-weight: bold;
 }
 
-#filtro-distrito {
-    background-color: white;
-    border-radius: 15px;
+
+#boton-general, #boton-informe, #boton-inicio {
     padding: 5px;
-    font-family: Arial, sans-serif;
+    border-radius: 5px;
     font-size: 10px;
-    text-transform: uppercase;
     text-align: center;
-    color: var(--textos);
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-weight: bold;
+    width: 100px;
+    padding-top: 9px;
+}
+
+#boton-general {
+    background-color: var(--celeste);
+    color: #FFF;
+}
+
+#boton-general:hover {
+    background-color: var(--gris-claro);
+}
+
+#boton-informe {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+    border-radius: 12px;
+}
+
+#boton-informe:hover {
+    background-color: var(--gris-claro);
 }
 
 #boton-inicio {
     background-color: var(--gris-claro);
-    border-radius: 5px;
-    padding: 5px;
-    color: #FFF;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
+    margin-left: auto;
+
+
 }
 
-#boton-inicio:hover {
-    color: var(--textos);
-}
-
-
-.message-error, .message-exclamation, .message-success{
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 20px;
-    color: #FFFFFF;
-    font-size: 12px;
+.mensajes {
+    border-radius: 10px;
     font-weight: 200;
     text-align: center;
+    font-size: 12px;
+    padding: 15px;
+    margin: 20px auto;
+    width: 400px;
+    color: #FFFFFF;
 }
 
-#sec-messages .message-error {
-    background-color: var(--mensaje-usuario-rojo);
-    
-    
-
-}
-
-#sec-messages .message-success {
+#mensaje-completado {
     background-color: var(--mensaje-usuario-verde);
-    
-
 }
 
-#sec-messages .message-exclamation{
+#mensaje-error {
+    background-color: var(--mensaje-usuario-rojo);
+}
+
+#mensaje-exclamacion {
     background-color: var(--mensaje-usuario-amarillo);
-    
-
 }
 
-#sec-messages p {
+.mensajes p {
     color: #FFF;
 }
 
-#sec-messages i {
+.mensajes i {
     color: #FFF;
-    margin-right: 10px;
+    margin-right: 15px;
 }
-
-
-#sec-titulo{
-    font-size: 14px;
-    font-family: Roboto, sans-serif;
-    color: var(--celeste);
-    margin-left: 50px;
-}
-
-.texto-path{
-    font-size: 14px;
-    font-family: Roboto, sans-serif;
-    color: var(--celeste);
-}
-
-#boton-agregar-informe{
-    background-color: var(--gris-claro);
-    color: white;
-    font-size: 10px;   
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    text-transform: uppercase;
-
-}
-#boton-agregar-informe:hover{
-    color: var(--textos);
-}
-
-
-.sec-contenido #Mesas-escrutadas{
-    background-color: var(--celeste);
-    border-radius: 10px;
-    margin: 15px;
-    height: 70px;
-    width: 184px;
-    padding: 0.5rem 1rem;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    color: #FFF;
-    background-image: url("http://www.w3.org/2000/svg");
-    display: flex;
-    align-items: center;
-}
-
-.sec-contenido #urna-mesas-escrutadas{
-    background-image: url("http://www.w3.org/2000/svg");
-    display: flex;
-    align-items: center;
-    width: 100px; /* Ancho de la imagen */
-    height: 100px; /* Alto de la imagen */
-
-}
-
-.sec-contenido #Electores{
-    background-color: var(--magenta);
-    border-radius: 10px;
-    margin: 15px;
-    width: 184px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-    background-image: url("http://www.w3.org/2000/svg");
-    display: flex;
-    align-items: center;
-}
-
-
-.sec-contenido #tipitos-electores{
-    width: 100%;
-    height: 100%;
-    fill: #FFF; /* Color de las personas en blanco */
-    background-image: url("http://www.w3.org/2000/svg");
-    display: flex;
-    align-items: center;
-
-}
-
-.sec-contenido #Participación-sobre-escrutado{
-    background-color: var(--morado);
-    border-radius: 10px;
-    margin: 15px;
-    width: 184px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-    background-image: url("http://www.w3.org/2000/svg");
-    display: flex;
-    align-items: center;
-
-}
-
-.sec-contenido #manitos{
-    width: 100%;
-    height: 100%;
-    fill: #FFF; /* Color de las personas en blanco */
-    background-image: url("http://www.w3.org/2000/svg");
-    display: flex;
-    align-items: center;
-
-}
-
-
-.contenedor {
-    display: flex;
-}
-
-.item {
-    background-color: var(--color-fondo);
-    border-radius: 10px;
-    margin: 15px;
-    width: 184px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.icono-svg {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px; /* Espacio entre el icono y el texto */
-}
-
-.texto-path p {
-    color: white;
-    font-size: 12px;
-}
-
-
-
 
 .sec-contenido {
     display: flex;
-    justify-content: flex-end;
-
-    
-}
-
-#Mesas-escrutadas {
-    background-color: var(--celeste);
+    align-items: center;
+    justify-content: space-around;
+    margin: 15px;
+    width: 100%;
 
 }
 
-#Electores {
-    background-color: var(--magenta);
-}
-
-#Escrutados {
-    background-color: var(--morado);
-}
-
-#boton-informe{
+#boton-agregar-informe {
     background-color: var(--gris-claro);
-    color: white;
-    font-size: 10px;   
+    font-size: 10px;
     text-align: center;
     padding: 5px;
     border-radius: 5px;
-    text-transform: uppercase;
     margin-left: 30px;
+    margin-top: 20px;
     margin-right: auto;
-    margin-top: 45px;
-    height: 30px;
+    height: 25px;
+    color: #FFF;
+
+}
+
+#boton-agregar-informe:hover {
+    color: var(--textos);
+}
+
+.cuadrado {
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 15px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    background-size: 50px;
+    font-size: 11px;
+    width: 180px;
+}
+
+.cuadrado p {
+    color: #FFF;
+}
+
+
+#urna-mesas-escrutadas {
+    background-color: var(--celeste);
+}
+
+#tipitos-electores {
+    background-color: var(--magenta);
+    
+}
+
+#escrutadas {
+    background-color: var(--morado);
+}
+
+.recuadros-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.recuadro {
+    background-color: white;
+    border-radius: 25px;
+    border: 1px var(--borde-Grilla) solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 10px;
+}
+
+.titulo-recuadro {
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    padding-top: 14px;
+}
+
+.recuadro h3 {
+    text-align: left;
+}
+
+.recuadro p {
+    text-align: right;
+    color: black;
+    font-size: 10px;
+}
+
+.contenido-recuadro {
+    padding: 10px;
+}
+
+.recuadro .contenido-recuadro {
+    max-height: 325px;
+    overflow-y: auto;
+}
+
+.contenido-recuadro svg {
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+    padding-top: 40px;
 }
 
 .cuadrado {
@@ -290,7 +225,6 @@ header .menu{
     padding: 0.5rem 1rem;
 
 }
-
 .chart-wrap {
     --chart-width: 260px;
     --grid-color: #aaa;
@@ -314,6 +248,7 @@ header .menu{
 }
 
 .chart-wrap.horizontal .bar::after {
+    
     transform: rotate(45deg);
     padding-top: 0px;
     display: block;
@@ -374,7 +309,6 @@ header .menu{
     white-space: nowrap;
 }
 
-
 #partido1 {
     background-color: var(--grafica-amarillo);
 }
@@ -406,59 +340,6 @@ header .menu{
 #partido8 {
     background-color: var(--grafica-gris);
 }
-
-
-.recuadros-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.recuadro {
-    background-color: white;
-    border-radius: 25px;
-    border: 1px var(--borde-Grilla) solid;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    margin: 10px;
-}
-
-.titulo-recuadro {
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    padding-top: 14px;
-}
-
-.recuadro h3 {
-    text-align: left;
-}
-
-.recuadro p {
-    text-align: right;
-    color: black;
-    font-size: 10px;
-}
-
-.contenido-recuadro {
-    padding: 10px;
-}
-
-.recuadro .contenido-recuadro {
-    max-height: 325px;
-    overflow-y: auto;
-}
-
-.contenido-recuadro svg {
-    max-width: 100%;
-    height: auto;
-    align-items: center;
-    padding-top: 40px;
-}
-
-
-
-
-
 
 
 .progress {
@@ -592,3 +473,28 @@ header .menu{
     font-size: 9px;
 }
 
+.texto-path {
+    color: var(--celeste);
+}
+
+#select {
+    background-color: transparent;
+    font-size: 14px;
+    padding: 5px;
+    border-style: hidden;
+    height: 25px;
+    color: var(--celeste);
+}
+
+#filtrar {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-weight: bold;
+    width: 100px;
+    padding-top: 9px;
+    background-color: #FFF;
+}

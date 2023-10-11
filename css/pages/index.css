@@ -1,79 +1,141 @@
-@import 'common.css';
-
-#imagen-index {
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 2px;
-    width: 400px;
-
-}
-
 .header-page {
     width: 100%;
-    color: #FFF;
+    color: var(--celeste);
     background-color: var(--fondo-Cabecera);
     padding: 0.5rem;
     margin: 0 auto;
+    
+}
+
+#menu-negro {
+    background-color: var(--fondo-Menu);
+    padding: 20px;
+}
+
+#menu-negro ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+#menu-negro li {
+    margin-right: 20px;
 }
 
 
+#menu-negro a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #FFF;
+}
 
 
+#menu-negro a:active {
+    font-weight: bold;
+}
+
+#paso, #generales, #informes {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-weight: bold;
+    width: 100px;
+    padding-top: 9px;
+}
+
+#generales {
+    background-color: var(--celeste);
+    color: #FFF;
+}
+
+#generales:hover {
+    background-color: var(--gris-claro);
+}
+
+#informes {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+    border-radius: 12px;
+}
+
+#informes:hover {
+    background-color: var(--gris-claro);
+}
+
+#paso {
+    background-color: var(--magenta);
+    color: #FFF;
+}
+
+#paso:hover {
+    background-color: var(--gris-claro);
+}
+
+#consulta {
+    color: #FFF;
+    margin-top: 5px;
+}
+ 
 #sec-titulo {
     display: flex;
-    margin: 10px;
     align-items: center;
     justify-content: space-around;
+    margin: 15px;
+    width: 80%;
 }
 
-
-
+#sec-contenido {
+    display: flex;
+    justify-content: center;
+}
 
 
 .texto-resultado {
     margin-left: 20px;
     margin-right: 2px;
-    max-width: 600px;
-    min-width: 200px;
+    min-width: 250px;
+    max-width: 700px;
+
+}
+
+#imagen-index img {
+    text-align: center;
+    margin-right: 30px;
+    width: 400px;
+    margin-left: 20px;
 }
 
 
-#sec-contenido .boton-paso {
-    background-color: var(--magenta);
+.boton-index {
     border-radius: 10px;
-    margin: 25px;
-    height: 400px;
-    width: 100px;
+    margin: 15px 55px 100px 55px;
+    width: 350px;
+    height: 100px;
     padding: 1rem;
-    color: #FFF;
     font-size: 28px;
-    background-image: url("http://www.w3.org/2000/svg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: start;
+    
 
 }
-#sec-contenido .boton-paso:hover{
-    background-color: var(--gris-claro);
-}
 
-
-#sec-contenido .boton-general {
+#boton-ir-a-paso {
     background-color: var(--celeste);
-    border-radius: 10px;
-    margin: 25px;
-    height: 400px;
-    width: 100px;
-    padding: 1rem;
-    color: #FFF;
-    font-size: 28px;
-    background-image: url("http://www.w3.org/2000/svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    
+    
 }
 
-#sec-contenido .boton-generales:hover {
-    background-color: var(--gris-claro);
-}
+#boton-ir-a-general {
+    background-color: var(--magenta);
 
+}
 

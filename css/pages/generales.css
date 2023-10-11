@@ -1,206 +1,173 @@
-@import 'common.css';
 
-#btn-filtrar {
-    background-color: white;
-    border-radius: 15px;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
-    background-image: url('/img/icons/buscar.png');
-    background-repeat: no-repeat;
-    background-size: 20px 20px; 
-    background-position: center left;
-
-}
-
-header .menu{
-    margin-right: 13px;
-    margin-left: 13px;
-    padding-top: 20px;
-    background-color: var(--fondo-Menu);
+.header-page {
     width: 100%;
+    color: var(--celeste);
+    background-color: var(--fondo-Cabecera);
+    padding: 0.5rem;
+    margin: 0 auto;
+    
+}
+
+#menu-negro {
+    background-color: var(--fondo-Menu);
+    padding: 20px;
+}
+
+#menu-negro ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+#menu-negro li {
+    margin-right: 20px;
 }
 
 
-#filtro-año {
-    background-color: white;
-    border-radius: 15px;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
+#menu-negro a {
+    text-decoration: none;
     text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
+    font-size: 10px;
+    color: #FFF;
 }
 
-#filtro-cargo {
-    background-color: white;
-    border-radius: 15px;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
 
+#menu-negro a:active {
+    font-weight: bold;
 }
 
-#filtro-distrito {
-    background-color: white;
-    border-radius: 15px;
+
+
+
+#boton-general, #boton-informe, #boton-inicio {
     padding: 5px;
-    font-family: Arial, sans-serif;
+    border-radius: 5px;
     font-size: 10px;
-    text-transform: uppercase;
     text-align: center;
-    color: var(--textos);
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-weight: bold;
+    width: 100px;
+    padding-top: 9px;
+}
+
+#boton-general {
+    background-color: var(--magenta);
+    color: #FFF;
+}
+
+#boton-general:hover {
+    background-color: var(--gris-claro);
+}
+
+#boton-informe {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+    border-radius: 12px;
+}
+
+#boton-informe:hover {
+    background-color: var(--gris-claro);
 }
 
 #boton-inicio {
     background-color: var(--gris-claro);
-    border-radius: 5px;
-    padding: 5px;
-    color: #FFF;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
+    margin-left: auto;
+
+
 }
 
-#boton-inicio:hover {
-    color: var(--textos);
-}
-
-
-.message-error, .message-exclamation, .message-success{
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 20px;
-    color: #FFFFFF;
-    font-size: 12px;
+.mensajes {
+    border-radius: 10px;
     font-weight: 200;
     text-align: center;
-}
-
-#sec-messages .message-error {
-    background-color: var(--mensaje-usuario-rojo);
-    
-    
-
-}
-
-#sec-messages .message-success {
-    background-color: var(--mensaje-usuario-verde);
-    
-
-}
-
-#sec-messages .message-exclamation{
-    background-color: var(--mensaje-usuario-amarillo);
-    
-
-}
-
-#sec-messages p {
-    color: #FFF;
-}
-
-#sec-messages i {
-    color: #FFF;
-    margin-right: 10px;
-}
-
-
-#sec-titulo{
-    font-size: 14px;
-    font-family: Roboto, sans-serif;
-    color: var(--celeste);
-    margin-left: 50px;
-}
-
-.texto-path{
-    font-size: 14px;
-    font-family: Roboto, sans-serif;
-    color: var(--celeste);
-}
-
-#boton-informe{
-    background-color: var(--gris-claro);
-    color: white;
-    font-size: 10px;   
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    margin-left: 30px;
-    margin-right: auto;
-    margin-top: 45px;
-    height: 30px;
-}
-
-#boton-agregar-informe:hover{
-    color: var(--textos);
-}
-
-
-
-
-
-.contenedor {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.item {
-    background-color: var(--color-fondo);
-    border-radius: 10px;
-    margin: 15px;
-    width: 184px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.icono-svg {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px; /* Espacio entre el icono y el texto */
-}
-
-.texto {
-    color: white;
     font-size: 12px;
+    padding: 15px;
+    margin: 20px auto;
+    width: 400px;
+    color: #FFFFFF;
+}
+
+#mensaje-completado {
+    background-color: var(--mensaje-usuario-verde);
+}
+
+#mensaje-error {
+    background-color: var(--mensaje-usuario-rojo);
+}
+
+#mensaje-exclamacion {
+    background-color: var(--mensaje-usuario-amarillo);
+}
+
+.mensajes p {
+    color: #FFF;
+}
+
+.mensajes i {
+    color: #FFF;
+    margin-right: 15px;
 }
 
 .sec-contenido {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-around;
+    margin: 15px;
+    width: 100%;
 
+}
+
+#boton-agregar-informe {
+    background-color: var(--gris-claro);
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-right: auto;
+    height: 25px;
+    color: #FFF;
+
+}
+
+#boton-agregar-informe:hover {
+    color: var(--textos);
+}
+
+.cuadrado {
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 15px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    background-size: 50px;
+    font-size: 11px;
+    width: 180px;
+}
+
+.cuadrado p {
+    color: #FFF;
+}
+
+
+#urna-mesas-escrutadas {
+    background-color: var(--celeste);
+}
+
+#tipitos-electores {
+    background-color: var(--magenta);
     
 }
 
-#Mesas-escrutadas {
-    background-color: var(--celeste);
-
-}
-
-#Electores {
-    background-color: var(--magenta);
-}
-
-#Escrutados {
+#escrutadas {
     background-color: var(--morado);
 }
-
-
-
-
-
-
 
 .recuadros-container {
     display: grid;
@@ -509,3 +476,28 @@ header .menu{
     font-size: 9px;
 }
 
+.texto-path {
+    color: var(--celeste);
+}
+
+#select {
+    background-color: transparent;
+    font-size: 14px;
+    padding: 5px;
+    border-style: hidden;
+    height: 25px;
+    color: var(--celeste);
+}
+
+#filtrar {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-weight: bold;
+    width: 100px;
+    padding-top: 9px;
+    background-color: #FFF;
+}

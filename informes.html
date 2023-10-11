@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="Viewport" content="width = divace width, initial-scale=1.0">>
+    <meta name="Viewport" content="width = divace width, initial-scale=1.0">
     <title>Sistema de Publicacian de Resultados Electorales</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/informes.css">
@@ -19,15 +19,17 @@
             </a>
         </div>
         <!--Barra de menú principal-->
-        <div id="menu-negro">
-            <a class="boton-paso-chico" href="paso.html">PASO</a>
-            <a class="boton-general-chico" href="generales.html">Generales</a>
-            <a href="informes.html" class="boton-informes">Informes</a>
+        <nav id="menu-negro">
+            <ul>
+                <li id="consulta">CONSULTAR:</li>
+                <li id="paso"><a href="paso.html">Paso</a></li>
+                <li id="generales"><a href="generales.html">Generales</a></li>
+                <li id="inicio"><a href="index.html">Inicio</a></li>
+            </ul>
 
-            <a href="#">Contacto</a>
-
-        </div>
+        </nav>
     </header>
+    
 
     <main>
         <section id="#sec-titulo">
@@ -332,13 +334,17 @@
     </main>
     <!--Pie de página-->
     <footer>
-        <p>
-            Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley 26571 y Art. 105 Ley 19945). Los
-            porcentajes de las agrupaciones políticas son calculados sobre los votos válidos (PASO) conforme al art.
-            45 Ley 26.571 y afirmativos (Generales). No se incluyen los votos correspondientes a los electores
-            residentes en el exterior ni privados de la libertad. Al usar este sitio usted acepta los Términos y
-            Condiciones
-        </p>
-        <p>Desarrollado con 🐱‍👤❤ - LC2</p>
+        <div class="pie-pagina">
+            <img src="img\icons\Ministerio-del-Interior_pluma.1ab9a7a7.png">
+            <img src="img/icons/Logo_DINE_negativo.a88f983e.png">
+            <img src="img/icons/logos_001-10.4430c8d5.png">
+            <p> Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley 26571 y Art. 105 Ley 19945). Los
+                porcentajes de las agrupaciones políticas son calculados sobre los votos válidos (PASO) conforme al art.
+                45 Ley 26.571 y afirmativos (Generales). No se incluyen los votos correspondientes a los electores
+                residentes en el exterior ni privados de la libertad. Al usar este sitio usted acepta los Términos y
+                Condiciones
+            </p>
+        </div>
+        
     </footer>
 </body>
