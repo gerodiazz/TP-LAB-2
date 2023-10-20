@@ -1,40 +1,4 @@
-.header-page {
-    width: 100%;
-    color: var(--celeste);
-    background-color: var(--fondo-Cabecera);
-    padding: 0.5rem;
-    margin: 0 auto;
-    
-}
 
-#menu-negro {
-    background-color: var(--fondo-Menu);
-    padding: 20px;
-}
-
-#menu-negro ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-
-#menu-negro li {
-    margin-right: 20px;
-}
-
-
-#menu-negro a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 10px;
-    color: #FFF;
-}
-
-
-#menu-negro a:active {
-    font-weight: bold;
-}
 
 
 #boton-general, #boton-informe, #boton-inicio {
@@ -49,8 +13,14 @@
     padding-top: 9px;
 }
 
+
+#boton-inicio {
+    background-color: var(--gris-claro);
+    margin-right: 25px;
+}
+
 #boton-general {
-    background-color: var(--celeste);
+    background-color: var(--magenta);
     color: #FFF;
 }
 
@@ -117,6 +87,10 @@
 
 }
 
+#sec-titulo {
+    margin: 50px;
+}
+
 #boton-agregar-informe {
     background-color: var(--gris-claro);
     font-size: 10px;
@@ -128,6 +102,7 @@
     margin-right: auto;
     height: 25px;
     color: #FFF;
+    text-transform: uppercase;
 
 }
 
@@ -488,7 +463,7 @@
 
 #filtrar {
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -497,4 +472,5 @@
     width: 100px;
     padding-top: 9px;
     background-color: #FFF;
+    color: var(--textos);
 }

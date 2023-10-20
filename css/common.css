@@ -11,6 +11,7 @@ body {
   
 }
 
+
 :root {
   --magenta: #ee3d8f;
   --celeste: #37bbed;
@@ -72,21 +73,56 @@ h3 {
 
 
 .header-page {
-  width: 100%;
-  color: #FFF;
+  padding: 0.5em;
   background-color: var(--fondo-Cabecera);
-  padding: 0.5rem;
+  color: white;
   margin: 0 auto;
 }
 
-
-
-
+.ancho-header {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
 
 header .logo {
   width: 150px;
 }
+
+
+
+#menu-negro {
+  background-color: var(--fondo-Menu);
+  padding: 10px;
+}
+
+#menu-negro ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+#menu-negro li {
+  margin-right: 20px;
+}
+
+
+#menu-negro a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #FFF;
+}
+
+
+#menu-negro a:active {
+  font-weight: bold;
+}
+
+
+
 
 .pie-pagina {
   display: flex;
@@ -106,51 +142,3 @@ header .logo {
   color: var(--texto-footer);
   
 }
-
-
-header .boton-paso-chico {
-  background-color: var(--magenta);
-  border-radius: 5px;
-  padding: 5px;
-  color: #FFF; 
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: center;
-  
-}
-
-header .boton-paso-chico:hover {
-  background-color: var(--gris-claro);
-}
-
-
-header .boton-general-chico {
-  background-color: var(--celeste);
-  border-radius: 5px;
-  padding: 5px;
-  color: #FFF;
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-header .boton-general-chico:hover {
-  background-color: var(--gris-claro);
-}
-
-
-
-header .boton-informes {
-  border-radius: 15px;
-  padding: 5px;
-  border: 1px solid white; 
-  color: #FFF; 
-  font-size: 10px; 
-  text-transform: uppercase; 
-  text-align: center; 
-}
-
-header .boton-informes:hover {
-  background-color: var(--gris-claro); /* Hover color de fondo desde una variable CSS */
-}
-

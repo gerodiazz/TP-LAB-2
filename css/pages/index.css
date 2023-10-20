@@ -1,42 +1,4 @@
-.header-page {
-    width: 100%;
-    color: var(--celeste);
-    background-color: var(--fondo-Cabecera);
-    padding: 0.5rem;
-    margin: 0 auto;
-    
-}
-
-#menu-negro {
-    background-color: var(--fondo-Menu);
-    padding: 20px;
-}
-
-#menu-negro ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-
-#menu-negro li {
-    margin-right: 20px;
-}
-
-
-#menu-negro a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 10px;
-    color: #FFF;
-}
-
-
-#menu-negro a:active {
-    font-weight: bold;
-}
-
-#paso, #generales, #informes {
+#boton-paso, #boton-generales, #boton-informes {
     padding: 5px;
     border-radius: 5px;
     font-size: 10px;
@@ -46,42 +8,45 @@
     font-weight: bold;
     width: 100px;
     padding-top: 9px;
-}
-
-#generales {
+  }
+  
+  #boton-generales {
     background-color: var(--celeste);
     color: #FFF;
-}
-
-#generales:hover {
+  }
+  
+  #boton-generales:hover {
     background-color: var(--gris-claro);
-}
-
-#informes {
+  }
+  
+  #boton-informes {
     background-color: transparent;
     border: 1px solid #FFF;
     color: #FFF;
     border-radius: 12px;
-}
-
-#informes:hover {
+  }
+  
+  #boton-informes:hover {
     background-color: var(--gris-claro);
-}
-
-#paso {
+  }
+  
+  #boton-paso {
     background-color: var(--magenta);
     color: #FFF;
-}
-
-#paso:hover {
+  }
+  
+  #boton-paso:hover {
     background-color: var(--gris-claro);
-}
-
-#consulta {
+  }
+  
+  #consulta {
     color: #FFF;
     margin-top: 5px;
-}
- 
+  }
+  
+
+
+
 #sec-titulo {
     display: flex;
     align-items: center;
@@ -97,12 +62,18 @@
 
 
 .texto-resultado {
-    margin-left: 20px;
+    margin-left: 110px;
     margin-right: 2px;
     min-width: 250px;
     max-width: 700px;
+    margin-bottom: 200px;
 
 }
+
+.titulo-elecciones {
+    margin-left: 110px;
+}
+
 
 #imagen-index img {
     text-align: center;
@@ -112,7 +83,7 @@
 }
 
 
-.boton-index {
+.botones-index {
     border-radius: 10px;
     margin: 15px 55px 100px 55px;
     width: 350px;
@@ -124,18 +95,26 @@
     align-items: center;
     border: none;
     justify-content: start;
+    text-decoration: none;
     
-
 }
 
+
+
+
 #boton-ir-a-paso {
-    background-color: var(--celeste);
-    
-    
+    background-color: var(--magenta);
+}
+
+#boton-ir-a-paso:hover {
+    background-color: var(--gris-claro);
 }
 
 #boton-ir-a-general {
-    background-color: var(--magenta);
+    background-color: var(--celeste);
+}
 
+#boton-ir-a-general:hover {
+    background-color: var(--gris-claro);
 }
 
