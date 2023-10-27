@@ -96,9 +96,14 @@
     border: none;
     justify-content: start;
     text-decoration: none;
+    cursor: pointer;
     
 }
 
+
+a {
+  text-decoration: none;
+}
 
 
 

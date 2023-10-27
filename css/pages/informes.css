@@ -1,22 +1,17 @@
 @import 'common.css';
 
+
 body {
     font-family: Arial, sans-serif;
 }
 
-.header-page {
-    background-color: var(--fondo-Cabecera);
-    
+h1 {
+    padding-left: 50px;
 }
 
-.ancho-header {
-    width: 90%;
-    color: #FFF;
-    background-color: var(--fondo-Cabecera);
-    padding: 0.5rem;
-    margin: 0 auto;
 
-}
+
+
 
 .message-error, .message-exclamation, .message-success{
     width: 400px;
@@ -64,85 +59,6 @@ body {
     color: var(--celeste);
 }
 
-#grid{
-    border-radius: 15px;
-    background-color: rgb(250, 250, 250);
-    width: 1000px;
-    margin: 0 auto 50px auto;
-    border: 1px solid var(--borde-Grilla);
-}
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-    
-}
-
-thead {
-    text-align: center;
-    color: var(--titulo-Grilla);
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-thead th{
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--borde-Grilla);
-}
-
-tbody tr:hover {
-    background-color: rgb(250, 250, 250);
-}
-
-tbody td {
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid var(--borde-inferior-grilla);
-    padding: 15px 0;
-    font-size: 12px;
-    vertical-align: top;
-    text-align: center;
-}
-
-td svg{
-    width: 100%;  
-    border-radius: 10px;
-    max-width: 100%;
-    align-items: left;
-}
-
-#Mesas-escrutadas, #Electores, #Participación-sobre-escrutado {
-    border-radius: 10px;
-    margin: 15px;
-    font-weight: bold;
-    width: 180px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-    color: #FFF;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    background-size: 50px;
-}
-
-#datos-generales p {
-    color: #FFF;
-}
-
-#sec-contenido h1 {
-    padding: 50px;
-}
-
-
-#datos-por-agrupacion {
-    overflow-y: auto;
-    height: 100px;
-    padding: 15px;
-    color: var(--textos);
-    
-}
 
 
 #inicio, #paso, #generales {
@@ -211,5 +127,120 @@ td svg{
 
 
 #menu-negro a:active {
+    font-weight: bold;
+}
+
+
+
+
+.grilla {
+    width: 1024px;
+    margin: 0 auto 50px auto;
+    border-radius: 15px;
+    border: 1px solid var(--borde-Grilla);
+    background-color: rgb(250, 250, 250);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    text-align: center;
+    color: var(--titulo-Grilla);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+thead th {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--borde-inferior-Grilla);
+}
+
+tbody tr:hover {
+    background-color: rgb(250, 250, 250);
+}
+
+tbody td {
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid var(--borde-inferior-Grilla);
+    padding: 15px 0px;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: top;
+}
+
+td svg {
+    max-width: 100%;  
+    align-items: left;
+}
+
+td {
+    width: 400px; 
+    height: 270px;
+}
+
+.texto-titulo {
+    font-size: 12px;
+    color: var(--textos);
+    font-weight: bold;
+}
+
+.texto-azul {
+    font-size: 11px;
+    color: var(--celeste);
+    text-align: center;
+}
+
+.dato-general {
+    border-radius: 10px;
+    margin: 15px;
+    font-weight: bold;
+    width: 80px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+    background-size: 50px; 
+}
+
+
+.dato-general p {
+    color: #FFF;
+    font-size: 10px;
+    margin: 5px 0; 
+}
+
+
+.dato-general svg {
+    width: 50px; 
+    height: 50px;
+    fill: #fff; 
+}
+
+
+.grilla-agrupaciones {
+    height: 200px;
+    padding: 20px;
+    font-size: 10px;
+    color: var(--textos);
+    text-align: left;
+    overflow-y: auto;
+
+}
+
+.grilla-agrupaciones p{
+    color: black;
+    font-size: 10px;
+}
+
+.right-align {
+    text-align: right;
     font-weight: bold;
 }

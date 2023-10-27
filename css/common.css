@@ -73,18 +73,18 @@ h3 {
 
 
 .header-page {
-  padding: 0.5em;
   background-color: var(--fondo-Cabecera);
-  color: white;
-  margin: 0 auto;
+  
 }
 
 .ancho-header {
   width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
+  color: #FFF;
+  background-color: var(--fondo-Cabecera);
+  padding: 0.5rem;
+  margin: 0 auto;
 
+}
 
 header .logo {
   width: 150px;

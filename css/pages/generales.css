@@ -1,6 +1,4 @@
 
-
-
 #boton-general, #boton-informe, #boton-inicio {
     padding: 5px;
     border-radius: 5px;
@@ -46,6 +44,9 @@
 
 }
 
+
+
+
 .mensajes {
     border-radius: 10px;
     font-weight: 200;
@@ -78,14 +79,16 @@
     margin-right: 15px;
 }
 
+
 .sec-contenido {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 15px;
     width: 100%;
 
 }
+
+
 
 #sec-titulo {
     margin: 50px;
@@ -103,6 +106,7 @@
     height: 25px;
     color: #FFF;
     text-transform: uppercase;
+    border-color: black;
 
 }
 
