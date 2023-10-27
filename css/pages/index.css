@@ -1,3 +1,4 @@
+
 #boton-paso, #boton-generales, #boton-informes {
     padding: 5px;
     border-radius: 5px;
@@ -23,7 +24,7 @@
     background-color: transparent;
     border: 1px solid #FFF;
     color: #FFF;
-    border-radius: 12px;
+    border-radius: 15px;
   }
   
   #boton-informes:hover {

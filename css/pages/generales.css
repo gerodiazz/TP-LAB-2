@@ -11,12 +11,6 @@
     padding-top: 9px;
 }
 
-
-#boton-inicio {
-    background-color: var(--gris-claro);
-    margin-right: 25px;
-}
-
 #boton-general {
     background-color: var(--magenta);
     color: #FFF;
@@ -30,7 +24,7 @@
     background-color: transparent;
     border: 1px solid #FFF;
     color: #FFF;
-    border-radius: 12px;
+    border-radius: 15px;
 }
 
 #boton-informe:hover {
@@ -40,22 +34,21 @@
 #boton-inicio {
     background-color: var(--gris-claro);
     margin-left: auto;
-
-
 }
 
-
-
+#boton-inicio a:hover {
+    color: var(--textos);
+}
 
 .mensajes {
-    border-radius: 10px;
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 12px;
     font-weight: 200;
     text-align: center;
-    font-size: 12px;
-    padding: 15px;
-    margin: 20px auto;
-    width: 400px;
-    color: #FFFFFF;
 }
 
 #mensaje-completado {

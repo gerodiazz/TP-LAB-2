@@ -1,5 +1,3 @@
-@import 'common.css';
-
 
 body {
     font-family: Arial, sans-serif;
@@ -10,6 +8,49 @@ h1 {
 }
 
 
+#boton-inicio, #boton-paso, #boton-generales {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-weight: bold;
+    width: 100px;
+    padding-top: 9px;
+}
+
+#boton-paso {
+    background-color: var(--magenta);
+    color: #FFF;
+}
+
+#boton-paso:hover {
+    background-color: var(--gris-claro);
+}
+
+#boton-generales {
+    background-color: var(--celeste);
+    color: #FFF;
+}
+
+#boton-generales:hover {
+    background-color: var(--gris-claro);
+}
+
+#consulta {
+    color: #FFF;
+    margin-top: 5px;
+}
+
+#boton-inicio {
+    background-color: var(--gris-claro);
+    margin-left: auto;
+}
+
+#boton-inicio a:hover {
+    color: var(--textos);
+}
 
 
 
@@ -58,78 +99,6 @@ h1 {
     font-family: Roboto, sans-serif;
     color: var(--celeste);
 }
-
-
-
-#inicio, #paso, #generales {
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-right: 10px;
-    font-weight: bold;
-    width: 100px;
-    padding-top: 9px;
-}
-
-#paso {
-    background-color: var(--magenta);
-    color: #FFF;
-}
-
-#paso:hover {
-    background-color: var(--gris-claro);
-}
-
-#generales {
-    background-color: var(--celeste);
-    color: #FFF;
-}
-
-#generales:hover {
-    background-color: var(--gris-claro);
-}
-
-#consulta {
-    color: #FFF;
-    margin-top: 5px;
-}
-
-#inicio {
-    background-color: var(--gris-claro);
-    margin-left: auto;
-}
-
-#menu-negro {
-    background-color: var(--fondo-Menu);
-    padding: 8px;
-}
-
-#menu-negro ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-
-#menu-negro li {
-    margin-right: 20px;
-}
-
-
-#menu-negro a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 10px;
-    color: #FFF;
-}
-
-
-#menu-negro a:active {
-    font-weight: bold;
-}
-
 
 
 
