@@ -182,8 +182,6 @@ function seccionSeleccionada() {
         }
     }
 }
-
-
 async function registroDatos() {
 
     
@@ -206,6 +204,37 @@ async function registroDatos() {
     participacionDato.innerText = estadoRecuento.participacionPorcentaje;
 
 }
+async function filtrarDatos() {
+    var selectAño = document.getElementById("select-año");
+    var selectCargo = document.getElementById("select-cargo");
+    var selectDistrito = document.getElementById("select-distrito");
+    var selectSeccion = document.getElementById("select-seccion");
+
+    var mensajeCompletado = document.getElementById("mensaje-completado");
+    var mensajeError = document.getElementById("mensaje-error");
+    var mensajeExclamacion = document.getElementById("mensaje-exclamacion");
+
+    // Valida y verifica si todos los campos de seleccion estan completos
+    if (selectAño.value === "0" || selectCargo.value === "0" || selectDistrito.value === "0" || selectSeccion.value === "0") {
+        mensajeCompletado.style.display = "none";
+        mensajeError.style.display = "none";
+        mensajeExclamacion.style.display = "block";
+        mensajeExclamacion.innerHTML = '<i class="fas fa-exclamation"></i> Faltan campos por seleccionar.';
+    } else {
+        mensajeExclamacion.style.display = "none";
+
+        try {
+            mensajeCompletado.style.display = "block";
+            mensajeError.style.display = "none";
+            mensajeCompletado.innerHTML = '<i class="fas fa-thumbs-up"></i> Operación completada con éxito.';
+        } catch (error) { // muestra mensaje de error
+            mensajeCompletado.style.display = "none";
+            mensajeError.style.display = "block";
+            mensajeError.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error: ' + error.message;
+        }
+    }
+}
+
 
 
 
