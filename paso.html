@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/paso.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="js/pages/paso.js" defer></script>
 
 
 
@@ -27,25 +28,28 @@
         </div>
         <!--Barra de menú principal-->
         <nav>
-            <div id="menu-negro">
+            <div id="menu-negro"> 
                 <ul>
                     <li>
-                        <select id="select">
-                            <option>Año</option>
+                        <select id="select-año" onchange="seleccionAño()" onload="filtrar()" class="select">
+                            <option value="0">Año</option>
                         </select>
-                        <select id="select">
-                            <option>Cargo</option>
+                        <select id="select-cargo" class="select" onchange="cargoSeleccionado()" onload="filtrar()">
+                            <option value="0">Cargo</option>
                         </select>
-                        <select id="select">
-                            <option>Distrito</option>
+                        <select id="select-distrito" class=" select" onchange="distritoSeleccionado()" onload="filtrar()">
+                            <option value="0">Distrito</option>
+                        </select>
+                        <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial">
+                        <select id="select-seccion" class="select" onchange="seccionSeleccionada()" onload="filtrar()">
+                            <option value="0">Sección</option>
                         </select>
                     </li>
-                    <li id="filtrar">
-                        <i class="fas fa-search">
-                        Filtrar
-
-                        </i>
+                    
+                    <li id="filtrar" onload="registroDatos()" onclick="filtrarDatos()">
+                        <i class="fas fa-search"></i>Filtrar
                     </li>
+                    
                     <li class="boton-barra" id="boton-general">
                         <a href="generales.html">Generales</a>
                         
@@ -71,24 +75,24 @@
     <!-- Resto de tu contenido -->
     <main>
         <section id="sec-messages">
-            <div class="mensajes" id="mensaje-completado">
+            <div class="mensajes" id="mensaje-completado" style="display: none;">
                 <p><i class="fas fa-thumbs-up"></i>Operación completada con éxito.</p>
 
                 
             </div>
-            <div class="mensajes" id="mensaje-error">
+            <div class="mensajes" id="mensaje-error" style="display: none;">
                 <p><i class="fas fa-exclamation-triangle"></i>Error: Se produjo un error al intentar agregar resultados al informe</p>
                 
             </div>
 
-            <div class="mensajes" id="mensaje-exclamacion">
+            <div class="mensajes" id="mensaje-exclamacion" style="display: none;">
                 <p><i class="fas fa-exclamation"></i>La operacion no se pudo completar</p>
                 
             </div>
         </section>
         <section id="sec-titulo">
-            <h1>Elecciones 2021 | Paso</h1>
-            <p class="texto-path">2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires</p>
+            <h1 id="titulo-elecciones">Elecciones 2021 | Paso</h1>
+            <p class="texto-celeste" id="subtitulo-eleccion">2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires</p>
 
             
         </section>
@@ -295,7 +299,7 @@
                         </div>
                     </div>
 
-                    <h3>La libertad avanza</h3>
+                    <h3>Partido Justicialista</h3>
                     <p>67%</p>
                     <p>60000 VOTOS</p>
                     <div class="progress4">
@@ -303,7 +307,7 @@
                             <span class="progress-bar-text4">67%</span>
                         </div>
                     </div>
-                    <h3>PTS</h3>
+                    <h3>Frente de Izquierda y de Trabajadores</h3>
                     <p>10%</p>
                     <p>10000 VOTOS</p>
                     <div class="progress5">

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/generales.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
+    <script src="js/pages/general.js" defer></script>
 </head>
 
 <body>
@@ -28,22 +28,24 @@
             <div id="menu-negro">
                 <ul>
                     <li>
-                        <select id="select">
+                        <select id="select-año" class="select">
                             <option>Año</option>
                         </select>
-                        <select id="select">
+                        <select id="select-cargo" class="select">
                             <option>Cargo</option>
                         </select>
-                        <select id="select">
+                        <select id="select-distrito" class="select">
                             <option>Distrito</option>
                         </select>
+                        <select id="select-seccion" class="select">
+                            <option>Seccion</option>
+                        </select>
                     </li>
+                    
                     <li id="filtrar">
-                        <i class="fas fa-search">
-                        Filtrar
-
-                        </i>
+                        <i class="fas fa-search"></i>Filtrar
                     </li>
+
                     <li class="boton-barra" id="boton-general">
                         <a href="paso.html">Paso</a>
                         
@@ -86,7 +88,7 @@
         </section>
         <section id="sec-titulo">
             <h1>Elecciones 2021 | Generales</h1>
-            <p class="texto-path">2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires</p>
+            <p class="texto-celeste">2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires</p>
 
             
         </section>
@@ -293,7 +295,7 @@
                         </div>
                     </div>
 
-                    <h3>La libertad avanza</h3>
+                    <h3>Partido Justicialista</h3>
                     <p>67%</p>
                     <p>60000 VOTOS</p>
                     <div class="progress4">
@@ -301,7 +303,7 @@
                             <span class="progress-bar-text4">67%</span>
                         </div>
                     </div>
-                    <h3>PTS</h3>
+                    <h3>Frente de Izquierda y de Trabajadores</h3>
                     <p>10%</p>
                     <p>10000 VOTOS</p>
                     <div class="progress5">

@@ -127,7 +127,7 @@ header .logo {
 .pie-pagina {
   display: flex;
   line-height: 1.4;
-  padding: 40px;
+  padding: 45px;
   background-color: var(--fondo-Footer);
 }
 .pie-pagina img {

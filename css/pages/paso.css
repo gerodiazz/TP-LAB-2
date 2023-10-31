@@ -445,20 +445,26 @@
     font-size: 9px;
 }
 
-.texto-path {
+.texto-celeste {
     color: var(--celeste);
 }
 
-#select {
-    background-color: transparent;
+.select {
+    background: transparent;
     font-size: 14px;
     padding: 5px;
     border-style: hidden;
-    height: 25px;
+    height: 30px;
+    border: none;
+    font-weight: bold;
     color: var(--celeste);
+    max-width: 200px;
 }
 
-#filtrar {
+
+
+#filtrar  {
+    display: inline-block;
     padding: 5px;
     border-radius: 15px;
     font-size: 10px;
@@ -467,7 +473,14 @@
     margin-right: 10px;
     font-weight: bold;
     width: 100px;
-    padding-top: 9px;
+    padding-top: 11px;
     background-color: #FFF;
     color: var(--textos);
+    cursor: pointer;
+   
+}
+
+
+#filtrar i {
+    margin-right: 5px;
 }
