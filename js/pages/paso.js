@@ -216,11 +216,13 @@ async function filtrarDatos() {
 
     // Valida y verifica si todos los campos de seleccion estan completos
     if (selectAño.value === "0" || selectCargo.value === "0" || selectDistrito.value === "0" || selectSeccion.value === "0") {
+        console.log('%cDebe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR', 'color: yellow;');
         mensajeCompletado.style.display = "none";
         mensajeError.style.display = "none";
         mensajeExclamacion.style.display = "block";
         mensajeExclamacion.innerHTML = '<i class="fas fa-exclamation"></i> Faltan campos por seleccionar.';
     } else {
+        console.log('%cOperación completada con éxito.', 'color: green;');
         mensajeExclamacion.style.display = "none";
 
         try {
@@ -228,6 +230,7 @@ async function filtrarDatos() {
             mensajeError.style.display = "none";
             mensajeCompletado.innerHTML = '<i class="fas fa-thumbs-up"></i> Operación completada con éxito.';
         } catch (error) { // muestra mensaje de error
+            console.error('%cError: ' + error.message, 'color: red;');
             mensajeCompletado.style.display = "none";
             mensajeError.style.display = "block";
             mensajeError.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error: ' + error.message;
