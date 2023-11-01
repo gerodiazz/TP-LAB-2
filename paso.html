@@ -31,23 +31,23 @@
             <div id="menu-negro"> 
                 <ul>
                     <li>
-                        <select id="select-año" onchange="seleccionAño()" onload="filtrar()" class="select">
+                        <select id="select-año" onchange="seleccionAño()" class="select">
                             <option value="0">Año</option>
                         </select>
-                        <select id="select-cargo" class="select" onchange="cargoSeleccionado()" onload="filtrar()">
+                        <select id="select-cargo" class="select" onchange="cargoSeleccionado()">
                             <option value="0">Cargo</option>
                         </select>
-                        <select id="select-distrito" class=" select" onchange="distritoSeleccionado()" onload="filtrar()">
+                        <select id="select-distrito" class=" select" onchange="distritoSeleccionado()">
                             <option value="0">Distrito</option>
                         </select>
                         <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial">
-                        <select id="select-seccion" class="select" onchange="seccionSeleccionada()" onload="filtrar()">
+                        <select id="select-seccion" class="select" onchange="seccionSeleccionada()">
                             <option value="0">Sección</option>
                         </select>
                     </li>
                     
-                    <li id="filtrar" onclick="actualizarInformacionTituloYSubtitulo()">
-                        <i class="fas fa-search"></i>Filtrar
+                    <li id="filtrar">
+                        <i class="fas fa-search" onchange="filtrarDatos()"></i>Filtrar
                     </li>
                     
                     <li class="boton-barra" id="boton-general">

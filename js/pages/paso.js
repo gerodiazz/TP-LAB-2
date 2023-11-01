@@ -195,9 +195,7 @@ function seccionSeleccionada() {
 
 
 
-
-// Obtener una referencia al botón "Filtrar" por su id
-var botonFiltrar = document.getElementById("boton-filtrar");
+var botonFiltrar = document.getElementById("filtrar");
 
 // Asociar un evento de clic al botón
 botonFiltrar.addEventListener("click", filtrarDatos);
@@ -239,6 +237,8 @@ async function filtrarDatos() {
 }
 
 
+
+
 function mostrarMensaje(mensaje) {
     // Aquí puedes implementar la lógica para mostrar un mensaje al usuario, por ejemplo, en un cuadro de diálogo o en un elemento en el documento.
     alert(mensaje); // Ejemplo: mostrar el mensaje en una ventana emergente
@@ -258,6 +258,10 @@ function mostrarMensajeError(mensaje) {
         alert("Error: " + mensaje); // Si no existe un elemento con ID "mensaje-error", muestra una alerta.
     }
 }
+
+
+
+
 
 botonFiltrar.addEventListener("click", function () {
     // Llama a la función para actualizar el título y el subtítulo
@@ -286,3 +290,5 @@ function actualizarInformacionTituloYSubtitulo() {
     document.getElementById("titulo-elecciones").textContent = `Elecciones ${selectAnioValue} | ${tipoEleccion}`;
     document.getElementById("subtitulo-eleccion").textContent = `${selectAnioValue} > ${tipoEleccion} > ${selectCargoValue} > ${selectDistritoValue} > ${selectSeccionValue}`;
 }
+
+
