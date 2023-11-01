@@ -46,7 +46,7 @@
                         </select>
                     </li>
                     
-                    <li id="filtrar" onload="registroDatos()" onclick="filtrarDatos()">
+                    <li id="filtrar" onclick="actualizarInformacionTituloYSubtitulo()">
                         <i class="fas fa-search"></i>Filtrar
                     </li>
                     
@@ -69,14 +69,14 @@
     <!-- Resto de tu contenido -->
     <main>
         <section id="sec-messages">
-            <div class="mensajes" id="mensaje-completado" style="display: none;">
+            <div class="mensajes" id="mensaje-completado">
                 <p><i class="fas fa-thumbs-up"></i>Operación completada con éxito.</p> 
             </div>
-            <div class="mensajes" id="mensaje-error" style="display: none;">
+            <div class="mensajes" id="mensaje-error">
                 <p><i class="fas fa-exclamation-triangle"></i>Error: Se produjo un error al intentar agregar resultados al informe</p>
             </div>
 
-            <div class="mensajes" id="mensaje-exclamacion" style="display: none;">
+            <div class="mensajes" id="mensaje-exclamacion">
                 <p><i class="fas fa-exclamation"></i>La operacion no se pudo completar</p>    
             </div>
         </section>

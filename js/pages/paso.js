@@ -1,18 +1,17 @@
-const tipoEleccion = 1;
-const tipoRecuento = 1;
+const tipoEleccion = 1; // PASO
+const tipoRecuento = 1; // Recuento definitivo
 
-// solicitud a la URL 
-async function solicitarDatosApi() {
-    try { 
-        const respuesta = await fetch("https://resultados.mininterior.gob.ar/api/menu/periodos");
-        if (!respuesta.ok) {
+async function fetchDatos() {
+    try { // Solicitud a la URL 
+        const response = await fetch("https://resultados.mininterior.gob.ar/api/menu/periodos");
+        if (!response.ok) {
             throw new Error("Error en la solicitud");
         }
-        const años = await respuesta.json();
-        return años; 
+        const años = await response.json();
+        return años; // Devuelve los datos de años
     } catch (error) {
         console.error("Error en fetchDatos:", error);
-        throw error; 
+        throw error; // Lanza el error
     }
 }
 
@@ -28,10 +27,11 @@ function cargarAños(años) {
     selectElement.innerHTML = selectHTML;
 }
 
-// Llamo a la funcion solicitarDatosApi
-solicitarDatosApi()
+// Llamo a las funciones secuencialmente. fetch, luego cargarAños.
+fetchDatos()
     .then(años => {
         cargarAños(años);
+        console.log(años)
     })
     .catch(error => {
         console.error("Error:", error);
@@ -45,14 +45,14 @@ function seleccionAño() {
 
     console.log(selectedValue);
 
-    if (selectedValue && selectedValue != 0) { 
-        solicitarCargos(selectedValue); 
+    if (selectedValue && selectedValue != 0) { // Verifico que no es nulo
+        fetchCargos(selectedValue); //Llamo a fetchCargos con el año seleccionado
     }
 }
 
 
 
-async function solicitarCargos(selectedValue) {
+async function fetchCargos(selectedValue) {
     console.log(tipoEleccion);
     try {
         const response = await fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + selectedValue);
@@ -60,9 +60,9 @@ async function solicitarCargos(selectedValue) {
             throw new Error("Error en la solicitud");
         }
 
-        var data = await response.json();  
-        data = data[tipoEleccion] // accedo a los datos de PASO
-
+        var data = await response.json();  // Almaceno en data
+        data = data[tipoEleccion] // Accedo a los datos de PASO
+        console.log(data[tipoEleccion])
         cargarCargos(data);
 
     } catch (error) {
@@ -77,10 +77,10 @@ function cargarCargos(data) {
     var selectElement = document.getElementById("select-cargo");
     let selectHTML = '<option value="0">Cargo</option>';
 
-    datosCargosYDistritos = data // cargo data en la variable global
-    var cargosAMostrar = [] // array para llenar los cargos
+    datosCargosYDistritos = data // Cargo data en variable global
+    var cargosAMostrar = [] // Array para llenar el segundo combo
 
-    cargosAMostrar = data.Cargos.map((dato) => { // se devuelve el cargo en forma de array 
+    cargosAMostrar = data.Cargos.map((dato) => { // Se devuelve el cargo en forma de array 
         return dato.Cargo;
     })
     console.log(cargosAMostrar)
@@ -136,6 +136,7 @@ function mostrarDistritos(arrayDistritos) {
 var seccionesAMostrar;
 
 function distritoSeleccionado() {
+    // Obtiene el distrito seleccionado para mostrar las secciones disponibles
     var selectElement = document.getElementById("select-distrito");
     var selectedValue = selectElement.value;
     console.log(selectedValue);
@@ -182,62 +183,106 @@ function seccionSeleccionada() {
         }
     }
 }
-async function registroDatos() {
 
-    
-    const anioEleccion = document.getElementById("select-año").value;
-    const cargoElegido = document.getElementById("select-cargo").value;
-    const distritoElegido = document.getElementById("select-distrito").value;
-    const seccionElegida = document.getElementById("select-seccion").value;
-    const tipoEleccion = "paso";
-    const titulo = document.getElementById("titulo-elecciones");
-    const subtitulo = document.getElementById("subtitulo-eleccion");
-    const mesasEscrutadasDato = document.getElementById("urna-mesas-escrutadas");
-    const electoresDato = document.getElementById("tipitos-electores");
-    const participacionDato = document.getElementById("escrutadas");
 
-    
-    titulo.innerText = `Elecciones ${anioEleccion} | ${tipoEleccion}`;
-    subtitulo.innerText = `${anioEleccion} > ${tipoEleccion} > ${cargoElegido} > ${distritoElegido} > ${seccionElegida}`;
-    mesasEscrutadasDato.innerText = estadoRecuento.mesasTotalizadas;
-    electoresDato.innerText = estadoRecuento.cantidadElectores;
-    participacionDato.innerText = estadoRecuento.participacionPorcentaje;
 
-}
+
+
+
+
+
+
+
+
+
+
+// Obtener una referencia al botón "Filtrar" por su id
+var botonFiltrar = document.getElementById("boton-filtrar");
+
+// Asociar un evento de clic al botón
+botonFiltrar.addEventListener("click", filtrarDatos);
+
+
 async function filtrarDatos() {
-    var selectAño = document.getElementById("select-año");
-    var selectCargo = document.getElementById("select-cargo");
-    var selectDistrito = document.getElementById("select-distrito");
-    var selectSeccion = document.getElementById("select-seccion");
+    // Obtener los valores de los campos de selección
+    var anioEleccion = document.getElementById("select-año").value;
+    var tipoRecuento = tipoRecuento;
+    var tipoEleccion = tipoEleccion;
+    var categoriaId = 2;
+    var distritoId = document.getElementById("select-distrito").value;
+    var seccionProvincialId = document.getElementById("hdSeccionProvincial").value;
+    var seccionId = document.getElementById("select-seccion").value;
+    var circuitoId = "";
+    var mesaId = "";
 
-    var mensajeCompletado = document.getElementById("mensaje-completado");
-    var mensajeError = document.getElementById("mensaje-error");
-    var mensajeExclamacion = document.getElementById("mensaje-exclamacion");
 
-    // Valida y verifica si todos los campos de seleccion estan completos
-    if (selectAño.value === "0" || selectCargo.value === "0" || selectDistrito.value === "0" || selectSeccion.value === "0") {
-        console.log('%cDebe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR', 'color: yellow;');
-        mensajeCompletado.style.display = "none";
-        mensajeError.style.display = "none";
-        mensajeExclamacion.style.display = "block";
-        mensajeExclamacion.innerHTML = '<i class="fas fa-exclamation"></i> Faltan campos por seleccionar.';
-    } else {
-        console.log('%cOperación completada con éxito.', 'color: green;');
-        mensajeExclamacion.style.display = "none";
 
-        try {
-            mensajeCompletado.style.display = "block";
-            mensajeError.style.display = "none";
-            mensajeCompletado.innerHTML = '<i class="fas fa-thumbs-up"></i> Operación completada con éxito.';
-        } catch (error) { // muestra mensaje de error
-            console.error('%cError: ' + error.message, 'color: red;');
-            mensajeCompletado.style.display = "none";
-            mensajeError.style.display = "block";
-            mensajeError.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error: ' + error.message;
+    // Construir la URL con los valores de los campos
+    var url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Error en la solicitud");
         }
+
+        const data = await response.json();
+
+
+        // Si la respuesta fue correcta, imprimir en la consola
+        console.log(data);
+    } catch (error) {
+        // Mostrar un mensaje de error en rojo con el detalle del error
+        mostrarMensajeError(`Error: ${error.message}`);
     }
 }
 
 
+function mostrarMensaje(mensaje) {
+    // Aquí puedes implementar la lógica para mostrar un mensaje al usuario, por ejemplo, en un cuadro de diálogo o en un elemento en el documento.
+    alert(mensaje); // Ejemplo: mostrar el mensaje en una ventana emergente
+}
+
+function mostrarMensajeError(mensaje) {
+    // Aquí puedes implementar la lógica para mostrar un mensaje de error al usuario.
+    // Puede ser un cuadro de diálogo de error, un mensaje en la página, etc.
+    // Por ejemplo, puedes mostrar un mensaje de error en un elemento con un ID específico:
+
+    var mensajeErrorElement = document.getElementById("mensaje-error");
+
+    if (mensajeErrorElement) {
+        mensajeErrorElement.textContent = mensaje;
+        mensajeErrorElement.style.color = "red"; // Establecer el color del mensaje en rojo
+    } else {
+        alert("Error: " + mensaje); // Si no existe un elemento con ID "mensaje-error", muestra una alerta.
+    }
+}
+
+botonFiltrar.addEventListener("click", function () {
+    // Llama a la función para actualizar el título y el subtítulo
+    actualizarInformacionTituloYSubtitulo();
+});
 
 
+var selectAnio = document.getElementById("select-año");
+var selectCargo = document.getElementById("select-cargo");
+var selectDistrito = document.getElementById("select-distrito");
+var selectSeccion = document.getElementById("select-seccion");
+
+selectAnio.addEventListener("change", actualizarInformacionTituloYSubtitulo);
+selectCargo.addEventListener("change", actualizarInformacionTituloYSubtitulo);
+selectDistrito.addEventListener("change", actualizarInformacionTituloYSubtitulo);
+selectSeccion.addEventListener("change", actualizarInformacionTituloYSubtitulo);
+
+function actualizarInformacionTituloYSubtitulo() {
+    var tipoEleccion = "PASO"
+    var selectAnioValue = selectAnio.value;
+    var selectCargoValue = selectCargo.value;
+    var selectDistritoValue = selectDistrito.value;
+    var selectSeccionValue = selectSeccion.options[selectSeccion.selectedIndex].text;
+
+    // Actualizar los elementos del DOM con el título y subtítulo
+    document.getElementById("titulo-elecciones").textContent = `Elecciones ${selectAnioValue} | ${tipoEleccion}`;
+    document.getElementById("subtitulo-eleccion").textContent = `${selectAnioValue} > ${tipoEleccion} > ${selectCargoValue} > ${selectDistritoValue} > ${selectSeccionValue}`;
+}
