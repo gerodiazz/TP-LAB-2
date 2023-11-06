@@ -117,13 +117,6 @@ header .logo {
 }
 
 
-#menu-negro a:active {
-  font-weight: bold;
-}
-
-
-
-
 .pie-pagina {
   display: flex;
   line-height: 1.4;

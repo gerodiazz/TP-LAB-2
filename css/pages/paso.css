@@ -42,6 +42,14 @@
     background-color: var(--gris-claro);
 }
 
+
+/*cursor pointer para los combos*/
+#select-año, #select-cargo, #select-distrito, #select-seccion {
+    cursor: pointer;
+}
+
+
+
 /*botones de mensajes (verde, rojo, amarillo)*/
 .mensajes {
     width: 400px;
@@ -75,12 +83,12 @@
     margin-right: 15px;
 }
 
+/*esta clase sirve para hacer flex a la seccion*/
 .sec-contenido {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-
 }
 
 #sec-titulo {
@@ -108,7 +116,7 @@
 }
 
 .cuadrado {
-    font-weight: bold;
+    /*rectangulos de mesas escrutadas, electores y participacion sobre escrutados*/
     border-radius: 10px;
     margin: 15px;
     height: 70px;
@@ -116,12 +124,13 @@
     display: flex;
     align-items: center;
     background-size: 50px;
-    font-size: 11px;
     width: 180px;
 }
 
 .cuadrado p {
     color: #FFF;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 
@@ -139,8 +148,10 @@
 }
 
 .recuadros-container {
+    /*esta clase hace que cada uno de los hijos sea grid*/
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
 }
 
 .recuadro {
@@ -176,6 +187,7 @@
 .recuadro .contenido-recuadro {
     max-height: 325px;
     overflow-y: auto;
+    
 }
 
 .contenido-recuadro svg {
@@ -183,9 +195,12 @@
     height: auto;
     align-items: center;
     padding-top: 40px;
+    padding-left: 130px;
 }
 
+
 .cuadrado {
+    /*rectangulos de mesas escrutadas, electores y participacion sobre escrutados*/
     border-radius: 10px;
     margin: 15px;
     width: 184px;
@@ -195,8 +210,14 @@
     align-items: center;
     background-size: 50px;
     padding: 0.5rem 1rem;
-
 }
+
+.cuadrado p {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: bold;
+}
+
 .chart-wrap {
     --chart-width: 260px;
     --grid-color: #aaa;
@@ -450,6 +471,7 @@
 }
 
 .select {
+    /*cada uno de los select*/
     background: transparent;
     font-size: 14px;
     padding: 5px;
@@ -462,7 +484,7 @@
 }
 
 
-
+/*boton filtrar*/
 #filtrar  {
     display: inline-block;
     padding: 5px;
@@ -480,7 +502,26 @@
    
 }
 
-
 #filtrar i {
     margin-right: 5px;
 }
+
+
+/*titulo de alerta manipulado desde js*/
+#titulo-mensaje {
+    width: 400px;
+    padding: 50px;
+    background-color: yellow;
+    margin-left: 600px;
+    border-radius: 30px;
+    
+
+}
+
+#titulo-mensaje p {
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+

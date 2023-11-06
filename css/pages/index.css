@@ -1,4 +1,4 @@
-
+/*botones de cabecera*/
 #boton-paso, #boton-generales, #boton-informes {
     padding: 5px;
     border-radius: 5px;
@@ -9,8 +9,11 @@
     font-weight: bold;
     width: 100px;
     padding-top: 9px;
-  }
-  
+    cursor: pointer;
+}
+
+
+ 
   #boton-generales {
     background-color: var(--celeste);
     color: #FFF;
@@ -47,7 +50,7 @@
   
 
 
-
+/*esta clase manipula el titulo, texto y la imagen*/
 #sec-titulo {
     display: flex;
     align-items: center;
@@ -56,12 +59,13 @@
     width: 80%;
 }
 
+/*esta clase es para que los botones sean flex y se puedan manipular*/
 #sec-contenido {
     display: flex;
     justify-content: center;
 }
 
-
+/*esta clase se encarga de manipular el titulo de Resultado electorales y el texto de abajo*/ 
 .texto-resultado {
     margin-left: 110px;
     margin-right: 2px;
@@ -71,11 +75,13 @@
 
 }
 
+/*titulo de elecciones 2021*/
 .titulo-elecciones {
-    margin-left: 110px;
+    margin-left: 120px;
 }
 
 
+/*imagen de inicio*/
 #imagen-index img {
     text-align: center;
     margin-right: 30px;
@@ -84,6 +90,7 @@
 }
 
 
+/*botones grandes de parte de abajo*/
 .botones-index {
     border-radius: 10px;
     margin: 15px 55px 100px 55px;
@@ -102,6 +109,7 @@
 }
 
 
+/*le saca el subrayado a los botones*/
 a {
   text-decoration: none;
 }

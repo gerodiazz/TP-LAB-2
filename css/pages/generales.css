@@ -40,6 +40,13 @@
     color: var(--textos);
 }
 
+/*cursor pointer para los combos*/
+#select-año, #select-cargo, #select-distrito, #select-seccion {
+    cursor: pointer;
+}
+
+
+
 .mensajes {
     width: 400px;
     margin: 20px auto;
@@ -78,7 +85,6 @@
     align-items: center;
     justify-content: space-around;
     width: 100%;
-
 }
 
 
@@ -108,7 +114,7 @@
 }
 
 .cuadrado {
-    font-weight: bold;
+    /*rectangulos de mesas escrutadas, electores y participacion sobre escrutados*/
     border-radius: 10px;
     margin: 15px;
     height: 70px;
@@ -116,12 +122,13 @@
     display: flex;
     align-items: center;
     background-size: 50px;
-    font-size: 11px;
     width: 180px;
 }
 
 .cuadrado p {
     color: #FFF;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 
@@ -139,11 +146,14 @@
 }
 
 .recuadros-container {
+    /*esta clase hace que cada uno de los hijos sea grid*/
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
 }
 
 .recuadro {
+    /*clase hija de recuadros-container*/
     background-color: white;
     border-radius: 25px;
     border: 1px var(--borde-Grilla) solid;
@@ -183,20 +193,13 @@
     height: auto;
     align-items: center;
     padding-top: 40px;
+    padding-left: 130px;
+    
 }
 
-.cuadrado {
-    border-radius: 10px;
-    margin: 15px;
-    width: 184px;
-    height: 70px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    background-size: 50px;
-    padding: 0.5rem 1rem;
 
-}
+
+
 .chart-wrap {
     --chart-width: 260px;
     --grid-color: #aaa;
@@ -450,6 +453,7 @@
 }
 
 .select {
+    /*cada uno de los select*/
     background: transparent;
     font-size: 14px;
     padding: 5px;
@@ -479,3 +483,4 @@
 #filtrar i {
     margin-right: 5px;
 }
+
