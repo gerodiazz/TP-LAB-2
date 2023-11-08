@@ -510,7 +510,7 @@
 /*titulo de alerta manipulado desde js*/
 #titulo-mensaje {
     width: 400px;
-    padding: 50px;
+    padding: 20px;
     background-color: yellow;
     margin-left: 600px;
     border-radius: 30px;

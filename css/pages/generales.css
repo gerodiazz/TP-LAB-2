@@ -484,3 +484,19 @@
     margin-right: 5px;
 }
 
+
+#titulo-mensaje {
+    width: 400px;
+    padding: 20px;
+    background-color: yellow;
+    margin-left: 600px;
+    border-radius: 30px;
+    
+
+}
+
+#titulo-mensaje p {
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+}
