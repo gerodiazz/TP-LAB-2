@@ -406,8 +406,6 @@ function actualizarMapa() {
 
 
 
-
-
 function mostrarResultadosDeDatos(mensaje, colorFondo) {
   textoNegro.style.display = objetoDisplays.textoNegro;
   textoCeleste.style.display = objetoDisplays.textoCeleste;
@@ -418,8 +416,6 @@ function mostrarResultadosDeDatos(mensaje, colorFondo) {
   msjInicio.style.textAlign = "center";
 
 }
-
-
 
 
 function mensajeCargaDeDatos() {
@@ -455,12 +451,17 @@ botonAgregarInformes.addEventListener("click", function () {
   const vTipoEleccion = tipoEleccion;
   const vCategoriaId = selectCargo.value;
   const vDistrito = selectDistrito.value;
-  const vSeccionProvincial = seccionProvincial.value;
+  const vSeccionProvincial = `${seccionProvincial.value},`;
   const vSeccionId = selectSeccion.value;
 
-  // Cadena con los valores
-  const nuevoRegistro = `${vanio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${vSeccionId}`;
+  let nombreCargo = selectCargo.options[selectCargo.selectedIndex].text;
+  let nombreDistrito = selectDistrito.options[selectDistrito.selectedIndex].text;
+  let nombreSeccion = selectSeccion.options[selectSeccion.selectedIndex].text;
 
+
+// Cadena con los valores
+const nuevoRegistro = `${vanio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${vSeccionId}|${nombreCargo}|${nombreDistrito}|${nombreSeccion}`;
+console.log(nuevoRegistro);
   // Obtiene los registros existentes del localStorage (si los hay)
   const informesExistenteJSON = localStorage.getItem("INFORMES");
   console.log(informesExistenteJSON);
@@ -499,9 +500,41 @@ botonAgregarInformes.addEventListener("click", function () {
 
 
 
+function cargaDeAgrupacionesPoliticas() {
+  contenedorAgrupacionesPoliticas.innerHTML = "";
 
+      datos.forEach((agrupacion) => {
+      let nuevaAgrupacion = document.createElement('div');
+      nuevaAgrupacion.classList.add('agrupacion');
+      nuevaAgrupacion.innerHTML = `<h3 id="titulo-de-agrupacion">${agrupacion.nombreAgrupacion}</h3>`;
 
-
+      agrupacion.listas.forEach((lista) => {
+          let nombre = lista.nombre;
+          let votos = lista.votos;
+          let porcentajeTotalDeVotos = lista.votos * 100 / agrupacion.votos;
+          porcentajeTotalDeVotos = porcentajeTotalDeVotos.toFixed(2);
+          
+          nuevaAgrupacion.innerHTML +=`
+                <div class="partido_contenedor">
+                    <div class="partido_descripcion_contenedor">
+                        <h5 class="partido_titulo">${nombre}</h5>
+                        <div>
+                            <p id="votosPorcentaje">${votosPorcentaje}%</p>
+                            <p id="votos">${votos}</p>
+                        </div>
+                    </div>
+                    <div class="progress" style="background: ${agrupacionesColores[agrupacion.idAgrupacion]?.colorLiviano || "grey"};">
+                        <div class="progress-bar"
+                            style="width:${votosPorcentaje}%; background: ${agrupacionesColores[agrupacion.idAgrupacion]?.colorPleno || "black"};">
+                            <span class="progress-bar-text">${votosPorcentaje}%</span>
+                        </div>
+                    </div>
+                </div>
+                `  
+            })
+        contenedorAgrupacionesPoliticas.appendChild(nuevaAgrupacion);
+    })
+}
 
 
 

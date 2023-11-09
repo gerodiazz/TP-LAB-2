@@ -1,3 +1,5 @@
+
+//agrego colores de agrupaciones
 const coloresDeAgrupaciones = {
     1: {
       colorPleno: "var(--grafica-amarillo)",
