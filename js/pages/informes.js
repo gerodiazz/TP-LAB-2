@@ -13,9 +13,10 @@ var sectorTitulos = document.getElementById("sec-titulo");
 var sectorContenidos = document.getElementById("sec-contenido");
 
 // Almaceno los displays originales de cada uno, previo a ocultarlos
-const displayOriginal = {
+var displayOriginal = {
   sectorTitulos: sectorTitulos.style.display,
   sectorContenidos: sectorContenidos.style.display,
+
 };
 
 sectorTitulos.style.display = "none";
@@ -35,6 +36,8 @@ function hayInformes() {
     const informes = JSON.parse(localStorage.getItem("INFORMES"));
     // Por ejemplo, puedes mostrar los informes en una lista en tu página web.
     filtrarDatos(informes);
+    sectorTitulos.style.display = displayOriginal.sectorTitulos;
+    sectorContenidos.style.display = displayOriginal.sectorContenidos;
   } else {
     // Si no hay datos, muestra un mensaje amarillo al usuario.
     mensajeIncompleto.style.display = "block";
@@ -224,6 +227,5 @@ function crearYOrdenarAgrupaciones(valoresTotales) {
   datosPorAgrupacion.innerHTML = ""; // Limpiar el contenido existente
   datosPorAgrupacion.appendChild(contenedorAgrupaciones);
 
-  sectorTitulos.style.display = displayOriginal.sectorTitulos;
-  sectorContenidos.style.display = displayOriginal.sectorContenidos;
 }
+
