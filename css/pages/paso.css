@@ -1,4 +1,4 @@
-
+@import "common.css";
 /* los 3 botones de la cabecera*/
 #boton-general, #boton-informe, #boton-inicio {
     padding: 5px;
@@ -510,18 +510,19 @@
 /*titulo de alerta manipulado desde js*/
 #titulo-mensaje {
     width: 400px;
-    padding: 20px;
-    background-color: yellow;
-    margin-left: 600px;
-    border-radius: 30px;
-    
-
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: var(--mensaje-usuario-amarillo);
 }
 
 #titulo-mensaje p {
-    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 200;
     font-size: 15px;
     text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
 }
-
-

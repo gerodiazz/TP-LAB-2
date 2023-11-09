@@ -343,10 +343,10 @@ function volverVisibleElementos() {
 
 
 function validacionCampos() {
-  return (selectAnio.value != "Año" &&
-  selectCargo.value != "Cargo" &&
-  selectDistrito.value != "Distrito" &&
-  selectSeccion.value != "Sección")
+  return (selectAnio.value != 0 &&
+  selectCargo.value != 0 &&
+  selectDistrito.value != 0 &&
+  selectSeccion.value != 0)
 }
 
 
@@ -365,23 +365,22 @@ botonFiltrar.addEventListener("click", async function () {
     } 
     else if (mesasEscrutadas === 0 && validacionCampos()) {
       actualizarTituloYSubtitulo()
-      mostrarResultadosDeDatos("No se encontró información para la consulta realizada", "yellow");
+      mostrarResultadosDeDatos("No se encontró información para la consulta realizada", "#ffc107");
     } 
     else {
       actualizarTituloYSubtitulo()
-      mostrarResultadosDeDatos("Error en la operacion", "red");
+      mostrarResultadosDeDatos("Error en la operacion", "#dc3545");
     }
   } 
   catch (error) {
     console.error("Error en la función filtrarDatos:", error);
-    mostrarResultadosDeDatos("Error en la operación", "red");
+    mostrarResultadosDeDatos("Error en la operación", "#dc3545");
     ocultarMensajeDeCarga();
   }
 });
 
 
 function realizarFiltrado() {
-  filtrarDatos();
   actualizarTituloYSubtitulo();
   volverVisibleElementos();
   visualizarInfoCuadradoColores();

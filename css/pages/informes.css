@@ -54,7 +54,7 @@ h1 {
 
 
 
-.message-error, .message-exclamation, .message-success{
+.mensaje-error, .mensaje-exclamacion, .mensaje-completado{
     width: 400px;
     margin: 20px auto;
     padding: 15px;
@@ -65,15 +65,15 @@ h1 {
     text-align: center;
 }
 
-#sec-messages .message-error {
+#sec-messages .mensaje-error {
     background-color: var(--mensaje-usuario-rojo);
 }
 
-#sec-messages .message-success {
+#sec-messages .mensaje-completado {
     background-color: var(--mensaje-usuario-verde);
 }
 
-#sec-messages .message-exclamation{
+#sec-messages .mensaje-exclamacion{
     background-color: var(--mensaje-usuario-amarillo);
 }
 
@@ -89,12 +89,6 @@ h1 {
 
 
 #sec-contenido #Elecciones-titulo{
-    font-size: 14px;
-    font-family: Roboto, sans-serif;
-    color: var(--celeste);
-}
-
-.texto-path{
     font-size: 14px;
     font-family: Roboto, sans-serif;
     color: var(--celeste);
@@ -194,7 +188,7 @@ td {
 }
 
 
-.grilla-agrupaciones {
+.grilla-datos-por-agrupacion {
     height: 200px;
     padding: 20px;
     font-size: 10px;
@@ -204,7 +198,7 @@ td {
 
 }
 
-.grilla-agrupaciones p{
+.grilla-datos-por-agrupacion p{
     color: black;
     font-size: 10px;
 }

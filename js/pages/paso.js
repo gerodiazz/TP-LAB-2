@@ -2,10 +2,13 @@ const tipoEleccion = 1;
 const tipoRecuento = 1; 
 
 
+
 var arregloDeCargos = [];
 var arregloDeDistritos = [];
 var arregloDeSecciones = [];
 const vDistritoVacio = "Distrito";
+
+var contenedorAgrupacionesPoliticas = document.getElementById("tres-recuadros");
 
 //agarrando los elementos con su ID
 var selectAnio = document.getElementById("select-año");
@@ -53,8 +56,6 @@ function cargarAños(años) {
     elementoAño.appendChild(opcion);
   });
 }
-
-
 
 
 
@@ -222,6 +223,8 @@ botonFiltrar.addEventListener("click", filtrarDatos);
 
 
 //funcion de filtrarDatos
+
+var datos; //en datos se va a almacenar el JSON
 async function filtrarDatos() {
   // boton que filtra los datos
   var anioEleccion = document.getElementById("select-año").value;
@@ -244,7 +247,7 @@ async function filtrarDatos() {
       throw new Error("Error en la solicitud");
     }
 
-    const datos = await respuesta.json();
+    datos = await respuesta.json();
 
     mesasEscrutadas = datos.estadoRecuento.mesasTotalizadas;
     electores = datos.estadoRecuento.cantidadElectores;
@@ -262,13 +265,9 @@ async function filtrarDatos() {
 
 
 
-
-
 botonFiltrar.addEventListener("click", function () {
   actualizarTituloYSubtitulo(); // Llamo a la función para actualizar el titulo y subtitulo
 });
-
-
 
 
 
@@ -341,12 +340,12 @@ function volverVisibleElementos() {
  
 };
 
-
+//validando los campos
 function validacionCampos() {
-  return (selectAnio.value != "Año" &&
-  selectCargo.value != "Cargo" &&
-  selectDistrito.value != "Distrito" &&
-  selectSeccion.value != "Sección")
+  return (selectAnio.value != 0 &&
+  selectCargo.value != 0 &&
+  selectDistrito.value != 0 &&
+  selectSeccion.value != 0)
 }
 
 
@@ -365,23 +364,22 @@ botonFiltrar.addEventListener("click", async function () {
     } 
     else if (mesasEscrutadas === 0 && validacionCampos()) {
       actualizarTituloYSubtitulo()
-      mostrarResultadosDeDatos("No se encontró información para la consulta realizada", "yellow");
+      mostrarResultadosDeDatos("No se encontró información para la consulta realizada", "#ffc107");
     } 
     else {
-      actualizarTituloYSubtitulo()
-      mostrarResultadosDeDatos("Error en la operacion", "red");
+      actualizarTituloYSubtitulo();
+      mostrarResultadosDeDatos("Error en la operacion", "#dc3545");
     }
   } 
   catch (error) {
     console.error("Error en la función filtrarDatos:", error);
-    mostrarResultadosDeDatos("Error en la operación", "red");
+    mostrarResultadosDeDatos("Error en la operación", "#dc3545");
     ocultarMensajeDeCarga();
   }
 });
 
 
 function realizarFiltrado() {
-  filtrarDatos();
   actualizarTituloYSubtitulo();
   volverVisibleElementos();
   visualizarInfoCuadradoColores();
@@ -418,6 +416,7 @@ function mostrarResultadosDeDatos(mensaje, colorFondo) {
   msjInicio.style.backgroundColor = colorFondo;
   msjInicio.style.fontWeight = "bold"
   msjInicio.style.textAlign = "center";
+
 }
 
 
@@ -494,6 +493,15 @@ botonAgregarInformes.addEventListener("click", function () {
     }, 5000);
   }
 });
+
+
+
+
+
+
+
+
+
 
 
 
