@@ -462,7 +462,7 @@ botonAgregarInformes.addEventListener("click", function () {
 // Cadena con los valores
 const nuevoRegistro = `${vanio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${vSeccionId}|${nombreCargo}|${nombreDistrito}|${nombreSeccion}`;
 console.log(nuevoRegistro);
-  // Obtiene los registros existentes del localStorage (si los hay)
+
   const informesExistenteJSON = localStorage.getItem("INFORMES");
   console.log(informesExistenteJSON);
   let informesExistentes = [];
@@ -476,17 +476,17 @@ console.log(nuevoRegistro);
     }
   }
 
-  // Verifica si el nuevo registro ya existe
+
   if (informesExistentes.includes(nuevoRegistro)) {
     msjAmarillo.style.display = "block";
     setTimeout(() => {
       msjAmarillo.style.display = "none";
     }, 5000);
   } else {
-    // Agrega el nuevo registro al array
+
     informesExistentes.push(nuevoRegistro);
 
-    // Almacena el array actualizado en el localStorage
+
     localStorage.setItem("INFORMES", JSON.stringify(informesExistentes));
     msjVerde.style.display = "block";
     setTimeout(() => {
@@ -495,46 +495,6 @@ console.log(nuevoRegistro);
   }
 });
 
-
-
-
-
-
-function cargaDeAgrupacionesPoliticas() {
-  contenedorAgrupacionesPoliticas.innerHTML = "";
-
-      datos.forEach((agrupacion) => {
-      let nuevaAgrupacion = document.createElement('div');
-      nuevaAgrupacion.classList.add('agrupacion');
-      nuevaAgrupacion.innerHTML = `<h3 id="titulo-de-agrupacion">${agrupacion.nombreAgrupacion}</h3>`;
-
-      agrupacion.listas.forEach((lista) => {
-          let nombre = lista.nombre;
-          let votos = lista.votos;
-          let porcentajeTotalDeVotos = lista.votos * 100 / agrupacion.votos;
-          porcentajeTotalDeVotos = porcentajeTotalDeVotos.toFixed(2);
-          
-          nuevaAgrupacion.innerHTML +=`
-                <div class="partido_contenedor">
-                    <div class="partido_descripcion_contenedor">
-                        <h5 class="partido_titulo">${nombre}</h5>
-                        <div>
-                            <p id="votosPorcentaje">${votosPorcentaje}%</p>
-                            <p id="votos">${votos}</p>
-                        </div>
-                    </div>
-                    <div class="progress" style="background: ${agrupacionesColores[agrupacion.idAgrupacion]?.colorLiviano || "grey"};">
-                        <div class="progress-bar"
-                            style="width:${votosPorcentaje}%; background: ${agrupacionesColores[agrupacion.idAgrupacion]?.colorPleno || "black"};">
-                            <span class="progress-bar-text">${votosPorcentaje}%</span>
-                        </div>
-                    </div>
-                </div>
-                `  
-            })
-        contenedorAgrupacionesPoliticas.appendChild(nuevaAgrupacion);
-    })
-}
 
 
 
