@@ -163,8 +163,7 @@ function actualizarMapa(distritoId) {
 
   if (provinciaEncontrada) {
     imagenMapa.innerHTML = `${provinciaEncontrada.svg}`;
-    imagenMapa.style.width = "10px";
-    imagenMapa.style.height = "10px";
+    
   } else {
     console.log(
       "No se encontró una provincia correspondiente al distrito seleccionado."
