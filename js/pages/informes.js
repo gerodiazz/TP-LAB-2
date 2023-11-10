@@ -16,7 +16,7 @@ var sectorContenidos = document.getElementById("sec-contenido");
 var displayOriginal = {
   sectorTitulos: sectorTitulos.style.display,
   sectorContenidos: sectorContenidos.style.display,
-
+//holamundo
 };
 
 sectorTitulos.style.display = "none";
