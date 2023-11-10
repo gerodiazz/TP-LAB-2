@@ -16,7 +16,6 @@ var sectorContenidos = document.getElementById("sec-contenido");
 var displayOriginal = {
   sectorTitulos: sectorTitulos.style.display,
   sectorContenidos: sectorContenidos.style.display
-
 };
 
 sectorTitulos.style.display = "none";
