@@ -15,7 +15,7 @@ var sectorContenidos = document.getElementById("sec-contenido");
 // Almaceno los displays originales de cada uno, previo a ocultarlos
 var displayOriginal = {
   sectorTitulos: sectorTitulos.style.display,
-  sectorContenidos: sectorContenidos.style.display,
+  sectorContenidos: sectorContenidos.style.display
 
 };
 
@@ -226,6 +226,7 @@ function crearYOrdenarAgrupaciones(valoresTotales) {
   // Agregar el contenedor al DOM
   datosPorAgrupacion.innerHTML = ""; // Limpiar el contenido existente
   datosPorAgrupacion.appendChild(contenedorAgrupaciones);
+  
 
 }
 
