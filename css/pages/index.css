@@ -74,6 +74,9 @@
     margin-bottom: 200px;
 
 }
+.texto-resultado p {
+  font-size: 18px;
+}
 
 /*titulo de elecciones 2021*/
 .titulo-elecciones {

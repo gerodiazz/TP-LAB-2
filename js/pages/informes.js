@@ -3,14 +3,14 @@ var electores = "";
 var participacionSobreEscrutado = "";
 var valoresTotalizadosPositivos = "";
 var mapa = document.getElementById("mapas-svg");//
-var textoTituloChico = document.getElementById("texto-elecciones-chico");//modificado
-var textoSubtituloChico = document.getElementById("texto-path-chico");//modificado
+var textoTituloChico = document.getElementById("texto-elecciones-chico");//texto de eleccioens
+var textoSubtituloChico = document.getElementById("texto-path-chico");//texto celeste
 
-var datosPorAgrupacion = document.getElementById("datos-por-agrupacion");//
-var porcentajesAgrupacion = document.getElementById("porcentaje-agrupaciones");//
+var datosPorAgrupacion = document.getElementById("datos-por-agrupacion");// seccion de datos por agrupacion
+var porcentajesAgrupacion = document.getElementById("porcentaje-agrupaciones");// numero de porcentaje
 
-var sectorTitulos = document.getElementById("sec-titulo");//
-var sectorContenidos = document.getElementById("sec-contenido");//
+var sectorTitulos = document.getElementById("sec-titulo");// id para agregar texto o imagen
+var sectorContenidos = document.getElementById("sec-contenido");//contenido de toda la grilla
 
 const tablaResultados = document.getElementById("tabla-resultados");//modificado
 
@@ -24,6 +24,7 @@ const displayOriginal = {
 sectorTitulos.style.display = "none";
 sectorContenidos.style.display = "none";
 
+//agarrando mensajes de colores
 const mensajeExito = document.getElementById("mensaje-exito");
 const mensajeError = document.getElementById("mensaje-error");
 const mensajeIncompleto = document.getElementById("mensaje-incompleto");
@@ -33,7 +34,9 @@ mensajeError.style.display = "none";
 mensajeIncompleto.style.display = "none";
 
 function hayInformes() {
+  //se verifica si hay informes guardados en el local storage
   if (localStorage.getItem("INFORMES")) {
+    //convierte a un objeto JSON (objeto javascript) el valor que hay en la clave INFORMES que es una cadena de caracteres
     const informes = JSON.parse(localStorage.getItem("INFORMES"));
     filtrarDatos(informes);
     sectorTitulos.style.display = displayOriginal.sectorTitulos
@@ -46,10 +49,12 @@ function hayInformes() {
 
 hayInformes();
 
+//filtrarDatos toma un array de informes y si hay informes disponibles va iterando sobre cada uno
+//cada informe es una cadena de texto que se divide en partes con el caracter "|"
 async function filtrarDatos(informes) {
   if (informes && informes.length > 0) {
     for (const informe of informes) {
-      const informePartes = informe.split("|");
+      const informePartes = informe.split("|"); //divide la cadena en subcadenas o en partes cuando encuentra el "|"
 
       // Obtener los datos necesarios para construir la URL de la API
       let anioEleccion = informePartes[0];
@@ -78,7 +83,7 @@ async function filtrarDatos(informes) {
         nombreSeccion
       );
 
-      seccionProvincialId = seccionProvincialId.replace(",", "");
+      seccionProvincialId = seccionProvincialId.replace(",", ""); //eliminando la coma de la cadena
       // Construir la URL de la API
       let url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
 
@@ -124,8 +129,7 @@ async function filtrarDatos(informes) {
         let subtitulo = `${anioEleccion} > ${eleccionTipo} > ${nombreCargo} > ${nombreDistrito} > ${nombreSeccion}`;
         let mesasEscrutadas = data.estadoRecuento.mesasTotalizadas;
         let electores = data.estadoRecuento.cantidadElectores;
-        let participacionSobreEscrutado =
-          data.estadoRecuento.participacionPorcentaje;
+        let participacionSobreEscrutado = data.estadoRecuento.participacionPorcentaje;
 
         // Crear nuevos elementos tr, td y agregarlos a la tabla
         const tr = document.createElement("tr");
@@ -139,15 +143,11 @@ async function filtrarDatos(informes) {
         tdEleccion.appendChild(h3Eleccion);
 
         const pEleccion = document.createElement("p");
-        pEleccion.classList.add("texto-path");
+        pEleccion.classList.add("texto-azul");
         pEleccion.innerHTML = subtitulo;
         tdEleccion.appendChild(pEleccion);
 
-        const tdCuadros = mostrarInformacionCuadros(
-          mesasEscrutadas,
-          electores,
-          participacionSobreEscrutado
-        );
+        const tdCuadros = mostrarInformacionCuadros(mesasEscrutadas, electores, participacionSobreEscrutado);
 
         let valoresTotales = data.valoresTotalizadosPositivos;
 
@@ -198,11 +198,7 @@ function actualizarMapa(distritoId) {
   }
 }
 
-function mostrarInformacionCuadros(
-  mesasEscrutadas,
-  electores,
-  participacionSobreEscrutado
-) {
+function mostrarInformacionCuadros(mesasEscrutadas, electores, participacionSobreEscrutado) {
   // Crear un contenedor div
   const contenedorCuadros = document.createElement("div");
 
@@ -216,6 +212,7 @@ function mostrarInformacionCuadros(
   return contenedorCuadros;
 }
 
+//toma un arreglo como parametro, el metodo sort ordena el arreglo en funcion de la propiedad votos de mayor a menor
 function crearYOrdenarAgrupaciones(valoresTotales) {
   // Ordenar las agrupaciones por la cantidad de votos (de mayor a menor)
   valoresTotales.sort((a, b) => b.votos - a.votos);
@@ -262,19 +259,9 @@ function crearYOrdenarAgrupaciones(valoresTotales) {
 }
 
 function generarTitulo(anioEleccion, eleccionTipo) {
-  document.getElementById(
-    "texto-elecciones-chico"
-  ).innerHTML = `Elecciones ${anioEleccion} | ${eleccionTipo}`;
+  document.getElementById("texto-elecciones-chico").innerHTML = `Elecciones ${anioEleccion} | ${eleccionTipo}`;
 }
 
-function generarSubtitulo(
-  anioEleccion,
-  eleccionTipo,
-  nombreCargo,
-  nombreDistrito,
-  nombreSeccion
-) {
-  document.getElementById(
-    "texto-path-chico"
-  ).innerHTML = `${anioEleccion} > ${eleccionTipo} > ${nombreCargo} > ${nombreDistrito} > ${nombreSeccion}`;
+function generarSubtitulo(anioEleccion,eleccionTipo,nombreCargo,nombreDistrito, nombreSeccion) {
+  document.getElementById("texto-path-chico").innerHTML = `${anioEleccion} > ${eleccionTipo} > ${nombreCargo} > ${nombreDistrito} > ${nombreSeccion}`;
 }

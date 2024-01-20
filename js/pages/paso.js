@@ -7,6 +7,7 @@ var arregloDeCargos = [];
 var arregloDeDistritos = [];
 var arregloDeSecciones = [];
 const vDistritoVacio = "Distrito";
+var valoresTotalizadosPositivos;
 
 var contenedorAgrupacionesPoliticas = document.getElementById("tres-recuadros");
 
@@ -93,6 +94,7 @@ async function solicitarCargosApi(vanio) {
     cargarCargos(eleccion.Cargos);
 
     arregloDeCargos = eleccion.Cargos; // Almaceno los cargos en variable global
+    console.log(arregloDeCargos);
   } 
   catch (error) {
     console.error("Error en solicitarCargosApi:", error);
@@ -160,13 +162,16 @@ function distritoElegido(event) {
       "Nombre distrito seleccionado:",
       distritoSeleccionado.Distrito
     );
-
-    arregloDeSecciones = distritoSeleccionado.SeccionesProvinciales; // Almaceno las secciones provinciales
-
+    
+    // Almaceno las secciones provinciales dentro del arreglo global de secciones  
+    arregloDeSecciones = distritoSeleccionado.SeccionesProvinciales; 
+    
+    //en el arreglo arregloDeSecciones se recorre cada elemento y se crea un arreglo 
+    //en base a seccion.Secciones, luego se aplana todo el arreglo
     const seccionesAMostrar = arregloDeSecciones.map((seccion) => {
         return seccion.Secciones;}).flat(); // Transformo el array en unidimensional con las secciones.
 
-    // console.log("Secciones provinciales: ", seccionesAMostrar);
+     console.log("Secciones provinciales: ", seccionesAMostrar);
 
     mostrarSecciones(seccionesAMostrar);
   }
@@ -193,12 +198,19 @@ function mostrarSecciones(secciones) {
 
 
 function seccionElegida(event) {
-  const idSeccion = Number(event.target.value);
+  const idSeccion = Number(event.target.value); //se obtiene el valor del id mediante el elemento q desencadenó el evento
+  //y a su vez el valor 
 
+  //dentro del arreglo de secciones se busca la seccion con la propiedad IdSeccion que sea igual
+  // a la que se eligio en el select
   const seccionSeleccionada = arregloDeSecciones.find(
     (seccion) => seccion.IdSeccion === idSeccion
-  ); // Busco y almaceno el ID de la seccion que elegi
+  ); 
 
+  //dentro de arregloDeSecciones se busca si hay alguna seccion provincial dentro de la propiedad Secciones 
+  //que su IdSeccion sea igual al valor que se eligio en el select, si la encuentra la almacena y 
+  //se le aplica la propiedad IDSeccionProvincial
+  
   const idSeccionProvincial = arregloDeSecciones.find((secProv) => {
     const existeSeccion = secProv.Secciones.some(
       (seccion) => seccion.IdSeccion === idSeccion
@@ -248,10 +260,12 @@ async function filtrarDatos() {
     }
 
     datos = await respuesta.json();
+   
 
     mesasEscrutadas = datos.estadoRecuento.mesasTotalizadas;
     electores = datos.estadoRecuento.cantidadElectores;
     participacionSobreEscrutado = datos.estadoRecuento.participacionPorcentaje;
+    valoresTotalizadosPositivos = datos.valoresTotalizadosPositivos;
 
     console.log("Mesas totalizadas:", mesasEscrutadas, "Electores:", electores, "Participacion sobre escrutado:", participacionSobreEscrutado);
 
@@ -282,6 +296,61 @@ function actualizarTituloYSubtitulo() {
   document.getElementById("titulo-elecciones").textContent = `Elecciones ${selectAnioValue} | ${tipoEleccion}`;
   document.getElementById("subtitulo-eleccion").textContent = `${selectAnioValue} > ${tipoEleccion} > ${selectCargoValue} > ${selectDistritoValue} > ${selectSeccionValue}`;
 }
+
+
+async function agrupacionesPoliticas() {
+  var i = 0 //indice de los colores 
+  var contenedor = document.getElementById("contenedor-barras");
+  contenedor.innerHTML = ""
+  valoresTotalizadosPositivos.forEach(valores => {
+
+      var nombreAgrup = valores.nombreAgrupacion
+      var votosTotales = valores.votos
+      var barra = document.createElement("div")
+      barra.innerHTML = `<h3>${nombreAgrup}</h3>`
+      contenedor.appendChild(barra)
+
+      valores.listas.forEach(lista => {
+
+          var nombre = lista.nombre
+          var cantVotos = lista.votos
+          var porcentajeVotos = cantVotos * 100 / votosTotales
+          porcentajeVotos = porcentajeVotos.toFixed(2)
+          barra.innerHTML = barra.innerHTML + `
+              <h5>${nombre}</h5>
+              <p>${porcentajeVotos}%</p>
+              <p>${cantVotos}</p>
+          <div class="progress" style="background: ${agrupacionesColores[i]?.colorLiviano || "grey"}; ">
+              <div class="progress-bar" style = "width:${porcentajeVotos}%; background: ${agrupacionesColores[i]?.colorPleno || "black"};" >
+                  <span class="progress-bar-text">${porcentajeVotos}%</span>
+              </div>
+          </div>`
+          contenedor.appendChild(barra)
+          i += 1
+      })
+  })
+}
+
+async function resumenDeVotos(){
+  cont = document.getElementById("barras")
+  cont.innerHTML = "";
+  var i = 0;
+  valoresTotalizadosPositivos.forEach(valores =>{
+      if (!(i == 7)){
+      var nombre = valores.nombreAgrupacion;
+      var votosPorcentaje = valores.votosPorcentaje;
+      cont.innerHTML = cont.innerHTML + `<div class="bar" id=${nombre} data-name="${nombre}" title="${nombre} ${votosPorcentaje}%" style="--bar-value:${votosPorcentaje}%; background-color:${agrupacionesColores[i].colorPleno};"></div>`
+      i += 1;
+      
+      }
+  })
+}
+
+
+
+
+
+
 
 
 
@@ -384,29 +453,27 @@ function realizarFiltrado() {
   volverVisibleElementos();
   visualizarInfoCuadradoColores();
   actualizarMapa();
-}
-
-
-function actualizarMapa() {
-  let imagenMapa = document.getElementById("mapas-svg");
-
-  const provinciaEncontrada = provincias.find(
-    (provincia) => provincia.idDistrito == selectDistrito.value
-  );
-
-  if (provinciaEncontrada) {
-    imagenMapa.innerHTML = `
-      <div style="margin: 0 auto; width: 50%; text-align: center;"> 
-        <h3>${provinciaEncontrada.provincia}</h3>
-        ${provinciaEncontrada.svg}
-      </div>
-    `;
-  }
+  agrupacionesPoliticas();
+  resumenDeVotos();
 }
 
 
 
-function mostrarResultadosDeDatos(mensaje, colorFondo) {
+
+async function actualizarMapa() {
+  var titulo = document.getElementById("nombre-provincia")
+  var distrito = selectDistrito.value
+  var imgMap = document.getElementById("mapas-svg")
+  imgMap.innerHTML = provinciasIds[distrito]
+  titulo.innerText = selectDistrito.options[selectDistrito.selectedIndex].text
+}
+
+
+
+
+
+
+  function mostrarResultadosDeDatos(mensaje, colorFondo) {
   textoNegro.style.display = objetoDisplays.textoNegro;
   textoCeleste.style.display = objetoDisplays.textoCeleste;
   let msjInicio = document.getElementById("titulo-mensaje");
@@ -444,7 +511,7 @@ function visualizarInfoCuadradoColores() {
 }
 
 const botonAgregarInformes = document.getElementById("boton-agregar-informe");
-
+//cuando se clickea el boton agregar a informes sucede lo siguiente
 botonAgregarInformes.addEventListener("click", function () {
   const vanio = selectAnio.value;
   const vTipoRecuento = tipoRecuento;
@@ -462,21 +529,24 @@ botonAgregarInformes.addEventListener("click", function () {
 // Cadena con los valores
 const nuevoRegistro = `${vanio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${vSeccionId}|${nombreCargo}|${nombreDistrito}|${nombreSeccion}`;
 console.log(nuevoRegistro);
-
+  //aca se recupera los datos almacenados localmente con la clave INFORMES
   const informesExistenteJSON = localStorage.getItem("INFORMES");
   console.log(informesExistenteJSON);
   let informesExistentes = [];
 
+  //si informesExistenteJSON contiene un valor,
+  //convierte la cadena de caracteres almacenada en el localStorage en un objeto JSON
   if (informesExistenteJSON) {
     try {
       informesExistentes = JSON.parse(informesExistenteJSON);
+      
     } catch (error) {
       
       console.error("Error al analizar JSON:", error);
     }
   }
 
-
+  
   if (informesExistentes.includes(nuevoRegistro)) {
     msjAmarillo.style.display = "block";
     setTimeout(() => {
@@ -486,7 +556,9 @@ console.log(nuevoRegistro);
 
     informesExistentes.push(nuevoRegistro);
 
-
+    //setItem almacena un par clave-valor en el local storage, la clave es INFORMES 
+    //y el valor es la representación en formato JSON del array informesExistentes.
+    // Antes de almacenar, el array se convierte a una cadena JSON mediante JSON.stringify.
     localStorage.setItem("INFORMES", JSON.stringify(informesExistentes));
     msjVerde.style.display = "block";
     setTimeout(() => {

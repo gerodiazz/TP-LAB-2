@@ -1,4 +1,5 @@
-
+@import "common.css";
+/* los 3 botones de la cabecera*/
 #boton-general, #boton-informe, #boton-inicio {
     padding: 5px;
     border-radius: 5px;
@@ -9,6 +10,16 @@
     font-weight: bold;
     width: 100px;
     padding-top: 9px;
+}
+
+
+#boton-inicio {
+    background-color: var(--gris-claro);
+    margin-left: auto;
+}
+
+#boton-inicio a:hover {
+    color: var(--textos);
 }
 
 #boton-general {
@@ -31,14 +42,6 @@
     background-color: var(--gris-claro);
 }
 
-#boton-inicio {
-    background-color: var(--gris-claro);
-    margin-left: auto;
-}
-
-#boton-inicio a:hover {
-    color: var(--textos);
-}
 
 /*cursor pointer para los combos*/
 #select-año, #select-cargo, #select-distrito, #select-seccion {
@@ -47,6 +50,7 @@
 
 
 
+/*botones de mensajes (verde, rojo, amarillo)*/
 .mensajes {
     width: 400px;
     margin: 20px auto;
@@ -79,15 +83,13 @@
     margin-right: 15px;
 }
 
-
+/*esta clase sirve para hacer flex a la seccion*/
 .sec-contenido {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
 }
-
-
 
 #sec-titulo {
     margin: 50px;
@@ -153,7 +155,6 @@
 }
 
 .recuadro {
-    /*clase hija de recuadros-container*/
     background-color: white;
     border-radius: 25px;
     border: 1px var(--borde-Grilla) solid;
@@ -186,6 +187,7 @@
 .recuadro .contenido-recuadro {
     max-height: 325px;
     overflow-y: auto;
+    
 }
 
 .contenido-recuadro svg {
@@ -194,11 +196,27 @@
     align-items: center;
     padding-top: 40px;
     padding-left: 130px;
-    
 }
 
 
+.cuadrado {
+    /*rectangulos de mesas escrutadas, electores y participacion sobre escrutados*/
+    border-radius: 10px;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    background-size: 50px;
+    padding: 0.5rem 1rem;
+}
 
+.cuadrado p {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: bold;
+}
 
 .chart-wrap {
     --chart-width: 260px;
@@ -462,8 +480,11 @@
     border: none;
     font-weight: bold;
     color: var(--celeste);
+    max-width: 200px;
 }
 
+
+/*boton filtrar*/
 #filtrar  {
     display: inline-block;
     padding: 5px;
@@ -477,7 +498,8 @@
     padding-top: 11px;
     background-color: #FFF;
     color: var(--textos);
-    cursor: pointer; 
+    cursor: pointer;
+   
 }
 
 #filtrar i {
@@ -485,6 +507,7 @@
 }
 
 
+/*titulo de alerta manipulado desde js*/
 #titulo-mensaje {
     width: 400px;
     margin: 20px auto;
@@ -492,17 +515,14 @@
     border-radius: 20px;
     text-align: center;
     background-color: var(--mensaje-usuario-amarillo);
-    
-
 }
 
 #titulo-mensaje p {
     color: #FFFFFF;
     font-size: 12px;
-    font-weight: 200px;
+    font-weight: 200;
     font-size: 15px;
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
 }
-
