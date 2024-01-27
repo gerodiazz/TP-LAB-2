@@ -1,137 +1,85 @@
-/*botones de cabecera*/
-#boton-paso, #boton-generales, #boton-informes {
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-right: 10px;
-    font-weight: bold;
-    width: 100px;
-    padding-top: 9px;
-    cursor: pointer;
+.encabezado {
+  width: 1024px;
+  margin: 0 auto 10px auto;
 }
 
 
- 
-  #boton-generales {
-    background-color: var(--celeste);
-    color: #FFF;
-  }
-  
-  #boton-generales:hover {
-    background-color: var(--gris-claro);
-  }
-  
-  #boton-informes {
-    background-color: transparent;
-    border: 1px solid #FFF;
-    color: #FFF;
-    border-radius: 15px;
-  }
-  
-  #boton-informes:hover {
-    background-color: var(--gris-claro);
-  }
-  
-  #boton-paso {
-    background-color: var(--magenta);
-    color: #FFF;
-  }
-  
-  #boton-paso:hover {
-    background-color: var(--gris-claro);
-  }
-  
-  #consulta {
-    color: #FFF;
-    margin-top: 5px;
-  }
-  
-
-
-/*esta clase manipula el titulo, texto y la imagen*/
-#sec-titulo {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 15px;
-    width: 80%;
-}
-
-/*esta clase es para que los botones sean flex y se puedan manipular*/
-#sec-contenido {
-    display: flex;
-    justify-content: center;
-}
-
-/*esta clase se encarga de manipular el titulo de Resultado electorales y el texto de abajo*/ 
-.texto-resultado {
-    margin-left: 110px;
-    margin-right: 2px;
-    min-width: 250px;
-    max-width: 700px;
-    margin-bottom: 200px;
-
-}
-.texto-resultado p {
+.sec-titulo {
+  width: 1024px;
+  margin: 0 auto 50px auto;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-around;
+  line-height: 25px;
   font-size: 18px;
 }
 
-/*titulo de elecciones 2021*/
-.titulo-elecciones {
-    margin-left: 120px;
+
+.texto-principal {
+  justify-content: start;
+  line-height: 25px;
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+.image-principal {
+  width: 350px;
+}
+
+.sec-contenido {
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.boton-paso {
+  background-color: var(--magenta);
+  border-radius: 10px;
+  margin: 25px;
+  height: 100px;
+  width: 400px;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.boton-paso:hover {
+  background-color: var(--gris-claro);
 }
 
 
-/*imagen de inicio*/
-#imagen-index img {
-    text-align: center;
-    margin-right: 30px;
-    width: 400px;
-    margin-left: 20px;
+.imagen-urna {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
 }
 
-
-/*botones grandes de parte de abajo*/
-.botones-index {
-    border-radius: 10px;
-    margin: 15px 55px 100px 55px;
-    width: 350px;
-    height: 100px;
-    padding: 1rem;
-    font-size: 28px;
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    border: none;
-    justify-content: start;
-    text-decoration: none;
-    cursor: pointer;
-    
+.palabra-paso {
+  color: white;
+  font-size: 28px;
 }
 
+.boton-generales {
+  background-color: var(--celeste);
+  border-radius: 10px;
+  margin: 25px;
+  height: 100px;
+  width: 400px;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-/*le saca el subrayado a los botones*/
-a {
+.boton-generales:hover {
+  background-color: var(--gris-claro);
+}
+
+.boton-paso a,
+.boton-generales a {
   text-decoration: none;
 }
-
-
-
-#boton-ir-a-paso {
-    background-color: var(--magenta);
-}
-
-#boton-ir-a-paso:hover {
-    background-color: var(--gris-claro);
-}
-
-#boton-ir-a-general {
-    background-color: var(--celeste);
-}
-
-#boton-ir-a-general:hover {
-    background-color: var(--gris-claro);
-}
-

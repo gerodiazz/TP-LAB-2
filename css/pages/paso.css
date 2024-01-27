@@ -1,224 +1,269 @@
-@import "common.css";
-/* los 3 botones de la cabecera*/
-#boton-general, #boton-informe, #boton-inicio {
+
+
+.selector-filtros {
+    background: transparent;
+    border: none;
+    font-size: 14px;
     padding: 5px;
-    border-radius: 5px;
-    font-size: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-right: 10px;
+    color: var(--celeste);
     font-weight: bold;
-    width: 100px;
-    padding-top: 9px;
-}
-
-
-#boton-inicio {
-    background-color: var(--gris-claro);
-    margin-left: auto;
-}
-
-#boton-inicio a:hover {
-    color: var(--textos);
-}
-
-#boton-general {
-    background-color: var(--magenta);
-    color: #FFF;
-}
-
-#boton-general:hover {
-    background-color: var(--gris-claro);
-}
-
-#boton-informe {
-    background-color: transparent;
-    border: 1px solid #FFF;
-    color: #FFF;
+    margin-bottom: 15px;
+  }
+  
+  .boton-filtrar {
+    padding: 5px;
     border-radius: 15px;
-}
-
-#boton-informe:hover {
-    background-color: var(--gris-claro);
-}
-
-
-/*cursor pointer para los combos*/
-#select-año, #select-cargo, #select-distrito, #select-seccion {
-    cursor: pointer;
-}
-
-
-
-/*botones de mensajes (verde, rojo, amarillo)*/
-.mensajes {
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 20px;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 200;
-    text-align: center;
-}
-
-#mensaje-completado {
-    background-color: var(--mensaje-usuario-verde);
-}
-
-#mensaje-error {
-    background-color: var(--mensaje-usuario-rojo);
-}
-
-#mensaje-exclamacion {
-    background-color: var(--mensaje-usuario-amarillo);
-}
-
-.mensajes p {
-    color: #FFF;
-}
-
-.mensajes i {
-    color: #FFF;
-    margin-right: 15px;
-}
-
-/*esta clase sirve para hacer flex a la seccion*/
-.sec-contenido {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-}
-
-#sec-titulo {
-    margin: 50px;
-}
-
-#boton-agregar-informe {
-    background-color: var(--gris-claro);
+    border: 1px solid white;
+    background-color: white;
+    color: var(--textos);
     font-size: 10px;
+    text-transform: uppercase;
     text-align: center;
+    text-decoration: none;
+    width: 80px;
+    height: 15px;
+    margin: 0 5px 20px 5px;
+    display: flex;
+    justify-content:center;
+  }
+  
+  
+  
+  .boton-inicio-header {
     padding: 5px;
     border-radius: 5px;
-    margin-left: 30px;
-    margin-top: 20px;
-    margin-right: auto;
-    height: 25px;
-    color: #FFF;
+    background-color: var(--gris-claro);
+    color: #fff;
+    font-size: 10px;
     text-transform: uppercase;
-    border-color: black;
-
-}
-
-#boton-agregar-informe:hover {
+    text-align: center;
+    text-decoration: none;
+    line-height: 15px;
+    width: 80px;
+    height: 15px;
+    margin: 0 5px 20px 5px;
+    margin-left: auto;
+  }
+  
+  
+  .boton-inicio-header:hover {
     color: var(--textos);
+  }
+  
+  header select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+  }
+  
+  
+  .boton-informes {
+    padding: 5px 12px 5px 13px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 15px;
 }
 
-.cuadrado {
-    /*rectangulos de mesas escrutadas, electores y participacion sobre escrutados*/
-    border-radius: 10px;
-    margin: 15px;
-    height: 70px;
-    padding: 0.5rem 1rem;
+  
+
+  i {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  
+  
+  div p {
+    color: white;
+  }
+  
+  
+  .titulo {
+    width: 90%;
+    margin: auto;
+  }
+  
+  .titulo p {
+    font-size: 14px;
+    color: var(--celeste);
+  }
+  
+  .agregar-informe-boton {
+    background-color: var(--gris-claro);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+  }
+  
+  .agregar-informe-boton:hover {
+    color: var(--textos);
+  }
+  
+  .main {
+    width: 90%;
+    margin: auto;
+  }
+  
+  .main main {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main-cards {
+    display: flex;
+  }
+  
+  /*cada rectangulo (celeste, rosa, morado)*/
+  .card {
     display: flex;
     align-items: center;
-    background-size: 50px;
-    width: 180px;
-}
-
-.cuadrado p {
-    color: #FFF;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-
-#urna-mesas-escrutadas {
-    background-color: var(--celeste);
-}
-
-#tipitos-electores {
-    background-color: var(--magenta);
-    
-}
-
-#escrutadas {
-    background-color: var(--morado);
-}
-
-.recuadros-container {
-    /*esta clase hace que cada uno de los hijos sea grid*/
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 10px;
-}
-
-.recuadro {
-    background-color: white;
-    border-radius: 25px;
-    border: 1px var(--borde-Grilla) solid;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    margin: 10px;
-}
-
-.titulo-recuadro {
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    padding-top: 14px;
-}
-
-.recuadro h3 {
-    text-align: left;
-}
-
-.recuadro p {
-    text-align: right;
-    color: black;
-    font-size: 10px;
-}
-
-.contenido-recuadro {
-    padding: 10px;
-}
-
-.recuadro .contenido-recuadro {
-    max-height: 325px;
-    overflow-y: auto;
-    
-}
-
-.contenido-recuadro svg {
-    max-width: 100%;
-    height: auto;
-    align-items: center;
-    padding-top: 40px;
-    padding-left: 130px;
-}
-
-
-.cuadrado {
-    /*rectangulos de mesas escrutadas, electores y participacion sobre escrutados*/
     border-radius: 10px;
     margin: 15px;
     width: 184px;
     height: 70px;
+    padding: 0.5rem 1rem;
+    color: white;
     font-size: 12px;
+  }
+  
+  .card div p {
+    color: white;
+  }
+  
+  .card div p:first-child {
+    font-weight: bold;
+  }
+  
+  .card:first-child {
+    background-color: var(--celeste);
+  }
+  
+  .card:nth-child(2) {
+    background-color: var(--magenta);
+  }
+  
+  .card:nth-child(3) {
+    background-color: var(--morado);
+  }
+  
+  /*cuadros de agrupaciones politicas, mapas y resumen de votos*/
+  .datos {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+    gap: 15px;
+  }
+  
+  .agrupaciones-container,
+  .mapa,
+  .chart-wrap {
+    border-radius: 25px;
+    border: 1px solid var(--borde-Grilla);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 500px;
+  
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    flex-grow: 1;
+    width: 30%;
+  }
+  
+  .agrupaciones {
+    overflow-y: scroll;
+  }
+  
+  .titulo-container h3 {
+    font-weight: bold;
+    padding: 1.8 rem 0 0 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .separador {
+    width: 95%;
+    margin: auto;
+    border: 1px solid rgb(199, 199, 199);
+  }
+  
+  .agrupacion h3 {
+    text-align: start;
+    margin-left: 5px;
+  }
+  
+  .agrupacion-texto {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .agrupacion-texto h3 {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .agrupacion-texto p {
+    font-size: 11px;
+    color: var(--textos);
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .mapa,
+  .chart-wrap {
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .mapa svg {
+    width: 300px;
+    height: 100%;
+  }
+  
+  
+  /*barra de progreso*/
+  .progress {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .progress-bar {
+    height: 100%;
     display: flex;
     align-items: center;
-    background-size: 50px;
-    padding: 0.5rem 1rem;
-}
-
-.cuadrado p {
-    color: #FFF;
-    font-size: 11px;
+    transition: width 0.25s;
+    border-radius: 5px;
+  }
+  
+  .progress-bar-text {
+    margin-left: 10px;
     font-weight: bold;
-}
-
-.chart-wrap {
+    color: var(--textos);
+    font-size: 9px;
+  }
+  
+  .mapa .chart-wrap {
     --chart-width: 260px;
     --grid-color: #aaa;
     --bar-thickness: 25px;
@@ -226,28 +271,28 @@
     --bar-spacing: 10px;
     font-family: sans-serif;
     width: var(--chart-width);
-}
-
-.chart-wrap .title {
+  }
+  
+  .chart-wrap .title {
     font-weight: bold;
     padding: 1.8em 0 2.8em;
     text-align: center;
     white-space: nowrap;
-}
-
-
-.chart-wrap.horizontal .grid {
+  }
+  
+  /* gira el grafico a 90 grados */
+  .chart-wrap.horizontal .grid {
     transform: rotate(-90deg);
-}
-
-.chart-wrap.horizontal .bar::after {
-    
+  }
+  
+  .chart-wrap.horizontal .bar::after {
+    /* gira las letras en sentido horizontal*/
     transform: rotate(45deg);
     padding-top: 0px;
     display: block;
-}
-
-.chart-wrap .grid {
+  }
+  
+  .chart-wrap .grid {
     margin-left: 50px;
     position: relative;
     padding: 5px 0 5px 0;
@@ -255,274 +300,52 @@
     width: 100%;
     border-left: 2px solid var(--grid-color);
     font-size: 10px;
-}
-
-
-.chart-wrap .grid::before {
+  }
+  
+  /* posicionamos el % del gráfico*/
+  .chart-wrap .grid::before {
     font-size: 0.8em;
     font-weight: bold;
     content: "0%";
     position: absolute;
     left: -0.5em;
     top: -1.5em;
-}
-
-.chart-wrap .grid::after {
+  }
+  
+  .chart-wrap .grid::after {
     font-size: 0.8em;
     font-weight: bold;
     content: "100%";
     position: absolute;
     right: -1.5em;
     top: -1.5em;
-}
-
-
-.chart-wrap.horizontal .grid::before,
-.chart-wrap.horizontal .grid::after {
+  }
+  
+  /* giramos las valores de 0% y 100% para horizontal */
+  .chart-wrap.horizontal .grid::before,
+  .chart-wrap.horizontal .grid::after {
     transform: rotate(90deg);
-}
-
-.chart-wrap .bar {
+  }
+  
+  
+  .chart-wrap .bar {
     width: var(--bar-value);
     height: var(--bar-thickness);
     margin: var(--bar-spacing) 0;
-    background-color: var(--bar-color);
+    background-color: var(--celeste);
     border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
-}
-
-.chart-wrap .bar:hover {
+    margin: 10px 0;
+  }
+  
+  .chart-wrap .bar:hover {
     opacity: 0.7;
-}
-
-.chart-wrap .bar::after {
+  }
+  
+  .chart-wrap .bar::after {
     content: attr(data-name);
     margin-left: 100%;
     padding: 10px;
     display: inline-block;
     white-space: nowrap;
-}
-
-#partido1 {
-    background-color: var(--grafica-amarillo);
-}
-
-#partido2 {
-    background-color: var(--grafica-lila2);
-}
-
-#partido3 {
-    background-color: var(--grafica-bordo);
-}
-
-#partido4 {
-    background-color: var(--grafica-celeste);
-}
-
-#partido5 {
-    background-color: var(--grafica-lila);
-}
-
-#partido6 {
-    background-color: var(--grafica-bordo);
-}
-
-#partido7 {
-    background-color: var(--grafica-verde);
-}
-
-#partido8 {
-    background-color: var(--grafica-gris);
-}
-
-
-.progress {
-    height: 20px;
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background: var(--grafica-amarillo-claro);
-}
-
-.progress-bar {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: width 0.25s;
-    border-radius: 5px;
-    width: 40%;
-    background: var(--grafica-amarillo);
-}
-
-.progress-bar-text {
-    margin-left: 10px;
-    font-weight: bold;
-    color: var(--textos);
-    font-size: 9px;
-}
-
-.progress2 {
-    height: 20px;
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background: var(--grafica-lila-claro);
-}
-
-.progress-bar2 {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: width 0.25s;
-    border-radius: 5px;
-    width: 20%;
-    background: var(--grafica-lila);
-}
-
-.progress-bar-text2 {
-    margin-left: 10px;
-    font-weight: bold;
-    color: var(--textos);
-    font-size: 9px;
-    
-}
-
-.progress3 {
-    height: 20px;
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background: var(--grafica-celeste-claro);
-}
-
-.progress-bar3 {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: width 0.25s;
-    border-radius: 5px;
-    width: 38%;
-    background: var(--grafica-celeste);
-}
-
-.progress-bar-text3 {
-    margin-left: 10px;
-    font-weight: bold;
-    color: var(--textos);
-    font-size: 9px;
-}
-
-
-
-
-.progress4 {
-    height: 20px;
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background: var(--grafica-bordo-claro);
-}
-
-.progress-bar4 {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: width 0.25s;
-    border-radius: 5px;
-    width: 55%;
-    background: var(--grafica-bordo);
-}
-
-.progress-bar-text4 {
-    margin-left: 10px;
-    font-weight: bold;
-    color: var(--textos);
-    font-size: 9px;
-}
-
-
-
-.progress5 {
-    height: 20px;
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background: var(--grafica-lila2-claro);
-}
-
-.progress-bar5 {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: width 0.25s;
-    border-radius: 5px;
-    width: 10%;
-    background: var(--grafica-lila2);
-}
-
-.progress-bar-text5 {
-    margin-left: 10px;
-    font-weight: bold;
-    color: var(--textos);
-    font-size: 9px;
-}
-
-.texto-celeste {
-    color: var(--celeste);
-}
-
-.select {
-    /*cada uno de los select*/
-    background: transparent;
-    font-size: 14px;
-    padding: 5px;
-    border-style: hidden;
-    height: 30px;
-    border: none;
-    font-weight: bold;
-    color: var(--celeste);
-    max-width: 200px;
-}
-
-
-/*boton filtrar*/
-#filtrar  {
-    display: inline-block;
-    padding: 5px;
-    border-radius: 15px;
-    font-size: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-right: 10px;
-    font-weight: bold;
-    width: 100px;
-    padding-top: 11px;
-    background-color: #FFF;
-    color: var(--textos);
-    cursor: pointer;
-   
-}
-
-#filtrar i {
-    margin-right: 5px;
-}
-
-
-/*titulo de alerta manipulado desde js*/
-#titulo-mensaje {
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 20px;
-    text-align: center;
-    background-color: var(--mensaje-usuario-amarillo);
-}
-
-#titulo-mensaje p {
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 200;
-    font-size: 15px;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: bold;
-}
+  }
+  
