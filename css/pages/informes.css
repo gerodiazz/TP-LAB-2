@@ -18,39 +18,6 @@
     color: var(--textos);
   }
   
-  
-  .menu-header-page .boton-paso {
-    background-color: var(--magenta);
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 10px;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-    line-height: 15px;
-  }
-  
-  .menu-header-page .boton-paso:hover {
-    background-color: var(--gris-claro);
-  }
-  
-  .menu-header-page .boton-generales {
-    background-color: var(--celeste);
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 10px;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-    line-height: 15px;
-  }
-  
-  .menu-header-page .boton-generales:hover {
-    background-color: var(--gris-claro);
-  }
-  
   .encabezado {
     width: 1024px;
     margin: 0 auto 10px auto;
@@ -90,9 +57,7 @@
     vertical-align: top;
   }
   
-  tbody tr td:hover {
-    background-color: rgb(255, 255, 255);
-  }
+  
   
   .mapas {
     height: 250px;
@@ -149,14 +114,7 @@
     color: white;
   }
 
- #participacion-porcentaje {
-    color: white;
- }
 
- #mesas-computadas {
-    color: white;
- }
-  
   .participacion-sobre-escrutado {
     background-color: var(--morado);
     border-radius: 10px;
@@ -165,6 +123,16 @@
     display: flex;
     margin: 2px;
   }
+
+ #participacion-porcentaje {
+    color: white;
+ }
+
+ #mesas-computadas {
+    color: white;
+ }
+  
+  
   
   .palabras-datos-generales {
     color: white;
@@ -196,11 +164,4 @@
     text-align: left;
   }
   
-  .agrupacion-item-a {
-    text-align: left;
-  }
   
-  .agrupacion-item {
-    text-align: right;
-    padding: auto;
-  }

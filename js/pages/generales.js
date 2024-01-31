@@ -1,5 +1,5 @@
 const tipoEleccion = 2; // Generales
-const tipoRecuento = 1; // Recuento definitivo
+const tipoRecuento = 1; 
 
 var cargosGlobal = [];
 var distritosGlobal = [];
@@ -93,7 +93,7 @@ async function fetchCargos(selectedValue) {
     console.log(
       "Año eleccion:",
       eleccion.Año,
-      "Tipo eleccion: (1-PASO 2-GENERAL)",
+      "Tipo eleccion: (1-PASO 2-GENERALES)",
       eleccion.IdEleccion
     );
 

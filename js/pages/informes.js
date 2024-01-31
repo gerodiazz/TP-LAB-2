@@ -257,7 +257,7 @@ function mostrarInformacionCuadros(
           </g>
       </svg>
       <div class="palabras-datos-generales"><span class="bold">Mesas
-              computadas:</span><br> <p id="mesas-computadas">${mesasEscrutadas}</p>
+              Escrutadas:</span><br> <p id="mesas-computadas">${mesasEscrutadas}</p>
       </div>
   </div>
   <div class="electores">
@@ -422,9 +422,13 @@ function mostrarInformacionCuadros(
   </div>
 </div>
   `;
-
+  contenedorCuadros.innerHTML += '<br><br><br><br><br><br><br><br><br><br>';
+  
   return contenedorCuadros;
 }
+
+
+
 
 function crearYOrdenarAgrupaciones(valoresTotales) {
   // Ordena las agrupaciones por la cantidad de votos (de mayor a menor)

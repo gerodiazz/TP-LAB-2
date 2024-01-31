@@ -147,6 +147,10 @@ h3 {
   margin: 0 5px 20px 5px;
 }
 
+.boton-paso-header:hover {
+  background-color: var(--gris-claro);
+}
+
 .boton-generales-header {
   padding: 5px;
   border-radius: 5px;
@@ -160,6 +164,10 @@ h3 {
   width: 80px;
   height: 15px;
   margin: 0 5px 20px 5px;
+}
+
+.boton-generales-header:hover {
+  background-color: var(--gris-claro);
 }
 
 
@@ -250,14 +258,22 @@ footer img {
   background-color: var(--grafica-amarillo);
 }
 
+
+#seleccion-año {
+  max-width: 85px;
+}
+
 #seleccion-cargo {
-  max-width: 300px;
+  max-width: 85px;
 }
 
 #seleccion-distrito {
-  max-width: 300px;
+  max-width: 85px;
 }
 
 #seleccion-seccion {
-  max-width: 300px;
+  max-width: 85px;
 }
+
+
+
