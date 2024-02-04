@@ -474,6 +474,7 @@ async function agrupacionesPoliticas() {
   var i = 0
   var contenedor = document.getElementById("contenedor-barras");
   contenedor.innerHTML = ""
+  valoresTotalizadosPositivos.sort((a, b) => b.votos - a.votos);
   valoresTotalizadosPositivos.forEach(valores => {
 
       var nombreAgrup = valores.nombreAgrupacion
@@ -491,7 +492,7 @@ async function agrupacionesPoliticas() {
           barra.innerHTML = barra.innerHTML + `
               <h5>${nombre}</h5>
               <p>${porcentajeVotos}%</p>
-              <p>${cantVotos} Votos</p>
+              <p>${cantVotos} VOTOS</p>
             <div class="progress" style="background: ${coloresAgrupaciones[i]?.colorLiviano || coloresAgrupaciones[9]?.colorLiviano}; ">
               <div class="progress-bar" style="width:${porcentajeVotos}%; background: ${coloresAgrupaciones[i]?.colorPleno || coloresAgrupaciones[9]?.colorPleno || "black"};" >
                   <span class="progress-bar-text">${porcentajeVotos}%</span>
@@ -509,7 +510,7 @@ async function resumenVotos(){
   cont.innerHTML = "";
   var i = 0;
   valoresTotalizadosPositivos.forEach(valores =>{
-      if (!(i == 7)){
+      if (i < 8){
       var nombre = valores.nombreAgrupacion;
       var votosPorcentaje = valores.votosPorcentaje;
       cont.innerHTML = cont.innerHTML + `<div class="bar" id=${nombre} data-name="${nombre}" title="${nombre} ${votosPorcentaje}%" style="--bar-value:${votosPorcentaje}%; background-color:${coloresAgrupaciones[i].colorPleno};"></div>`
@@ -574,3 +575,5 @@ agregarAInformesBoton.addEventListener("click", function () {
     }, 5000);
   }
 });
+
+

@@ -467,11 +467,11 @@ const coloresAgrupaciones = {
 };
 
 
-
 async function agrupacionesPoliticas() {
   var i = 0
   var contenedor = document.getElementById("contenedor-barras");
   contenedor.innerHTML = ""
+  valoresTotalizadosPositivos.sort((a, b) => b.votos - a.votos);
   valoresTotalizadosPositivos.forEach(valores => {
 
       var nombreAgrup = valores.nombreAgrupacion
@@ -508,7 +508,7 @@ async function resumenVotos(){
   cont.innerHTML = "";
   var i = 0;
   valoresTotalizadosPositivos.forEach(valores =>{
-      if (!(i == 7)){
+      if (i < 8){
       var nombre = valores.nombreAgrupacion;
       var votosPorcentaje = valores.votosPorcentaje;
       cont.innerHTML = cont.innerHTML + `<div class="bar" id=${nombre} data-name="${nombre}" title="${nombre} ${votosPorcentaje}%" style="--bar-value:${votosPorcentaje}%; background-color:${coloresAgrupaciones[i].colorPleno};"></div>`
@@ -573,4 +573,6 @@ agregarAInformesBoton.addEventListener("click", function () {
     }, 5000);
   }
 });
+
+
 
