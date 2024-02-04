@@ -14,12 +14,13 @@ var sectorContenidos = document.getElementById("sec-contenido");
 
 const tablaResultados = document.getElementById("tabla-resultados");
 
-// Almaceno los displays originales de cada uno, previo a ocultarlos
+// Almaceno los displays originales de cada uno, antes de ocultarlos
 const displayOriginal = {
   sectorTitulos: sectorTitulos.style.display,
   sectorContenidos: sectorContenidos.style.display,
 };
 
+//ocultando elementos
 sectorTitulos.style.display = "none";
 sectorContenidos.style.display = "none";
 
@@ -27,16 +28,18 @@ const mensajeExito = document.getElementById("mensaje-exito");
 const mensajeError = document.getElementById("mensaje-error");
 const mensajeIncompleto = document.getElementById("mensaje-incompleto");
 
+//ocultando elementos
 mensajeExito.style.display = "none";
 mensajeError.style.display = "none";
 mensajeIncompleto.style.display = "none";
+
 
 function hayInformes() {
   if (localStorage.getItem("INFORMES")) {
     mostrarMensajeDeCarga();
     setTimeout(function () {
       // Si hay datos, se ejecutan las funciones
-      const informes = JSON.parse(localStorage.getItem("INFORMES"));
+      const informes = JSON.parse(localStorage.getItem("INFORMES")); //convierte la cadena JSON a un array
       ocultarMensajeDeCarga();
       filtrarDatos(informes);
     }, 2000);
@@ -60,9 +63,9 @@ hayInformes();
 async function filtrarDatos(informes) {
   if (informes && informes.length > 0) {
     for (const informe of informes) {
-      const informePartes = informe.split("|");
+      const informePartes = informe.split("|"); //divido cada informe en partes para obtener datos separados
 
-      // Obtiene los datos necesarios para construir la URL de la API
+      // se obtienen los datos necesarios para construir la URL de la API
       let anioEleccion = informePartes[0];
       let tipoRecuento = informePartes[1];
       let tipoEleccion = informePartes[2];
@@ -133,10 +136,9 @@ async function filtrarDatos(informes) {
         let subtitulo = `${anioEleccion} > ${eleccionTipo} > ${nombreCargo} > ${nombreDistrito} > ${nombreSeccion}`;
         let mesasEscrutadas = data.estadoRecuento.mesasTotalizadas;
         let electores = data.estadoRecuento.cantidadElectores;
-        let participacionSobreEscrutado =
-          data.estadoRecuento.participacionPorcentaje;
+        let participacionSobreEscrutado = data.estadoRecuento.participacionPorcentaje;
 
-        // Crea nuevos elementos tr, td y los agrega a la tabla
+        // se crean nuevos elementos tr, td y los agrega a la tabla
         const tr = document.createElement("tr");
 
         const tdProvincia = actualizarMapa(distritoId);
@@ -152,11 +154,7 @@ async function filtrarDatos(informes) {
         pEleccion.innerHTML = `<p class="texto-path-chico" id="texto-path-chico">${anioEleccion} > ${eleccionTipo} > ${nombreCargo} > ${nombreDistrito} > ${nombreSeccion}</p>`;
         tdEleccion.appendChild(pEleccion);
 
-        const tdCuadros = mostrarInformacionCuadros(
-          mesasEscrutadas,
-          electores,
-          participacionSobreEscrutado
-        );
+        const tdCuadros = mostrarInformacionCuadros(mesasEscrutadas, electores, participacionSobreEscrutado); //llama a la funcion con los respectivos valores
 
         let valoresTotales = data.valoresTotalizadosPositivos;
 
@@ -201,11 +199,7 @@ function actualizarMapa(distritoId) {
   }
 }
 
-function mostrarInformacionCuadros(
-  mesasEscrutadas,
-  electores,
-  participacionSobreEscrutado
-) {
+function mostrarInformacionCuadros(mesasEscrutadas, electores, participacionSobreEscrutado) {
   const contenedorCuadros = document.createElement("div");
 
   // Agrega la información al contenedor
@@ -431,10 +425,10 @@ function mostrarInformacionCuadros(
 
 
 function crearYOrdenarAgrupaciones(valoresTotales) {
-  // Ordena las agrupaciones por la cantidad de votos (de mayor a menor)
+  // ordena las agrupaciones por la cantidad de votos (de mayor a menor)
   valoresTotales.sort((a, b) => b.votos - a.votos);
 
-  // Crea el contenedor
+  // crea el contenedor
   const contenedorAgrupaciones = document.createElement("div");
   contenedorAgrupaciones.id = "datosPorAgrupacion";
   contenedorAgrupaciones.style.overflowY = "auto";
@@ -468,24 +462,7 @@ function crearYOrdenarAgrupaciones(valoresTotales) {
   return contenedorAgrupaciones;
 }
 
-function generarTitulo(anioEleccion, eleccionTipo) {
-  document.getElementById(
-    "texto-elecciones-chico"
-  ).innerHTML = `<p class="texto-elecciones-chico" id="texto-elecciones-chico">Elecciones ${anioEleccion} | ${eleccionTipo}</p>`;
-}
 
-function generarSubtitulo(
-  anioEleccion,
-  eleccionTipo,
-  nombreCargo,
-  nombreDistrito,
-  nombreSeccion
-) {
-  nuevoTexto = document.getElementById("texto-path-chico");
-
-  nuevoTexto.innerHTML = `<p class="texto-path-chico" id="texto-path-chico">${anioEleccion} > ${eleccionTipo} > ${nombreCargo} > ${nombreDistrito} > ${nombreSeccion}</p>`;
-  return nuevoTexto;
-}
 
 function mostrarMensajeDeCarga() {
   sectorTitulos.style.display = displayOriginal.sectorTitulos;

@@ -3,6 +3,10 @@
   margin: 0 auto 10px auto;
 }
 
+.encabezado p {
+  font-size: 18px;
+}
+
 
 .sec-titulo {
   width: 1024px;

@@ -181,7 +181,8 @@
   }
   
   .agrupaciones {
-    overflow-y: scroll;
+    overflow-y: auto;
+    
   }
   
   .titulo-container h3 {
@@ -243,7 +244,7 @@
   /*barra de progreso*/
   .progress {
     height: 35px;
-    width: 100%;
+    width: 95%;
     border-radius: 5px;
     margin-bottom: 15px;
   }
@@ -273,6 +274,8 @@
     width: var(--chart-width);
   }
   
+  
+  /*estilos de grafico de barras*/
   .chart-wrap .title {
     font-weight: bold;
     padding: 1.8em 0 2.8em;
@@ -349,3 +352,14 @@
     white-space: nowrap;
   }
   
+  #contenedor-barras p {
+    color: black;
+    text-align: right;
+    margin-right: 30px;
+  }
+  
+  #grid-votos {
+    max-height: 70px;
+    align-items: center;
+    padding: auto;
+  }
