@@ -298,7 +298,7 @@
   .chart-wrap .grid {
     margin-left: 50px;
     position: relative;
-    padding: 5px 0 5px 0;
+    padding-left: 5px 0 5px 0;
     height: 100%;
     width: 100%;
     border-left: 2px solid var(--grid-color);
@@ -363,3 +363,10 @@
     align-items: center;
     padding: auto;
   }
+
+  .chart-wrap.horizontal .grid {
+    margin-top: 15px; 
+    margin-left: -50px; 
+    
+  }
+  

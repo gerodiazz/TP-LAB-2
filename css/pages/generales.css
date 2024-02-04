@@ -381,5 +381,11 @@
   #grid-votos {
     max-height: 70px;
     align-items: center;
-    padding-left: 100px;
+    padding: auto;
+  }
+
+  .chart-wrap.horizontal .grid {
+    margin-top: 15px; 
+    margin-left: -50px; 
+    
   }
