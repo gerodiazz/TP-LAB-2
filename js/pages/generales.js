@@ -4,6 +4,7 @@ const tipoRecuento = 1;
 var cargosGlobal = [];
 var distritosGlobal = [];
 var seccionesGlobal = [];
+
 const seleccionDeAño = document.getElementById("seleccion-año");
 const seleccionDeCargo = document.getElementById("seleccion-cargo");
 const seleccionDeDistrito = document.getElementById("seleccion-distrito");
