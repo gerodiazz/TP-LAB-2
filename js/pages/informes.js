@@ -3,11 +3,7 @@ var electores = "";
 var participacionSobreEscrutado = "";
 var valoresTotalizadosPositivos = "";
 var mapa = document.getElementById("mapas-svg");
-var textoTituloChico = document.getElementById("texto-elecciones-chico");
-var textoSubtituloChico = document.getElementById("texto-path-chico");
 
-var datosPorAgrupacion = document.getElementById("datos-por-agrupacion");
-var porcentajesAgrupacion = document.getElementById("porcentaje-agrupaciones");
 
 var sectorTitulos = document.getElementById("sec-titulo");
 var sectorContenidos = document.getElementById("sec-contenido");
@@ -97,13 +93,13 @@ async function filtrarDatos(informes) {
       let url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
 
       try {
-        const response = await fetch(url);
+        const respuesta = await fetch(url);
 
-        if (!response.ok) {
+        if (!respuesta.ok) {
           throw new Error("Error en la solicitud");
         }
 
-        const data = await response.json();
+        const data = await respuesta.json();
 
         console.log("Resultados obtenidos: ", data);
 
@@ -431,7 +427,8 @@ function crearYOrdenarAgrupaciones(valoresTotales) {
   // crea el contenedor
   const contenedorAgrupaciones = document.createElement("div");
   contenedorAgrupaciones.id = "datosPorAgrupacion";
-  contenedorAgrupaciones.style.overflowY = "auto";
+  contenedorAgrupaciones.style.overflowY = "scroll";
+  contenedorAgrupaciones.style.maxHeight = "300px"
 
   // Itera sobre las agrupaciones ordenadas
   valoresTotales.forEach((agrupacion) => {
@@ -442,6 +439,7 @@ function crearYOrdenarAgrupaciones(valoresTotales) {
     // Crea y configura los elementos HTML
     const divAgrupacion = document.createElement("div");
     divAgrupacion.classList.add("datos-por-agrupacion");
+    divAgrupacion.style.maxHeight = "80px"
 
     const pNombre = document.createElement("p");
     pNombre.style.fontWeight = "bold";
@@ -449,13 +447,13 @@ function crearYOrdenarAgrupaciones(valoresTotales) {
 
     const divPorcentaje = document.createElement("div");
     const pPorcentaje = document.createElement("p");
-    pPorcentaje.innerHTML = `${votosPorcentaje}% <br> (${votos} votos)`;
+    pPorcentaje.innerHTML = `${votosPorcentaje}% <br> (${votos} Votos)`;
 
     divPorcentaje.appendChild(pPorcentaje);
     divAgrupacion.appendChild(pNombre);
     divAgrupacion.appendChild(divPorcentaje);
 
-    // Agregar los elementos al contenedor
+    // va agregando cada agrupacion al contenedor de agrupaciones
     contenedorAgrupaciones.appendChild(divAgrupacion);
   });
 
